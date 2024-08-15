@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(21, 21, 54);
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-card {
+  display: flex;
+  background-color: white;
+  width: 50%;
+  height: 90%;
+  border-radius: 3%;
+  overflow: hidden;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+}
+
+.side-form {
+  justify-content: center;
+  align-items: center;
+
+}
