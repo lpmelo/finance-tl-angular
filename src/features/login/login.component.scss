@@ -5,6 +5,10 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(21, 21, 54);
+  background-image: url("/images/loginBackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   width: 100vw;
   height: 100vh;
 }
@@ -16,15 +20,19 @@
   height: 90%;
   border-radius: 3%;
   overflow: hidden;
+  padding: 0px !important;
 }
 
-.card {
-  height: 100%;
-  width: 100%;
+.img-container {
+  height: 40%;
+  background-image: url("/images/LogoCompleto.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.side-form {
+.login-form {
+  height: 60%;
   justify-content: center;
   align-items: center;
-
 }
