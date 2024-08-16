@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<div
+  *ngIf="actualUrl === '/' || actualUrl === '/login' as value; else elseBlock"
+>
+  <router-outlet></router-outlet>
+</div>
+<ng-template #elseBlock><layout-handler></layout-handler></ng-template>

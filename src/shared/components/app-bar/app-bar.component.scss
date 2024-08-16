@@ -1,0 +1,36 @@
+@import "../../../styles/variables";
+
+.app-bar-container {
+  display: flex;
+  height: 10vh;
+  background-color: $background-color;
+  max-width: unset;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.logo {
+  background-image: url("/images/logo.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  color: $white;
+  cursor: pointer;
+}
+
+.actions{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}

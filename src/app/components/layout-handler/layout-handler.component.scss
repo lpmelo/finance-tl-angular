@@ -1,0 +1,10 @@
+@import "../../../styles/variables";
+
+.content-container {
+  background-color: $background-color;
+  width: 100vw;
+  height: 90vh;
+  margin: 0px;
+  max-width: unset;
+  padding: 25px;
+}

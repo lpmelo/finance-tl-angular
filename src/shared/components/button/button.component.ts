@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input({ alias: 'label' }) buttonLabel: string | undefined;
-  @Input({ alias: 'type' }) buttonType: string = 'mat-flat-button';
+  @Input({ alias: 'type' }) buttonType: string = 'flat';
   @Input({ alias: 'class' }) class: string = 'full-width';
+  @Input({ alias: 'tooltip' }) tooltip: string | undefined;
 }

@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  title = 'finance-tl-angular';
-
+  actualUrl = window.location.pathname;
+  
   ngOnInit(): void {
     if (window.location.pathname === '/') {
       window.location.replace('/login');

@@ -8,9 +8,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { ButtonComponent } from './button/button.component';
+import { FinancialCardComponent } from './financial-card/financial-card.component';
+import { IconComponent } from './icon/icon.component';
+import { AppBarComponent } from './app-bar/app-bar.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  declarations: [InputFieldComponent, ButtonComponent],
+  declarations: [
+    InputFieldComponent,
+    ButtonComponent,
+    FinancialCardComponent,
+    IconComponent,
+    AppBarComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -19,7 +29,14 @@ import { ButtonComponent } from './button/button.component';
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
+    MatTooltipModule
   ],
-  exports: [InputFieldComponent, ButtonComponent],
+  exports: [
+    InputFieldComponent,
+    ButtonComponent,
+    FinancialCardComponent,
+    IconComponent,
+    AppBarComponent,
+  ],
 })
 export class ComponentsModule {}

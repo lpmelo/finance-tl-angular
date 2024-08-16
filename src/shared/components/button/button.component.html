@@ -1,1 +1,10 @@
-<button mat-flat-button class="{{ class }}">{{ buttonLabel }}</button>
+<div *ngIf="buttonType === 'flat'">
+  <button mat-flat-button matTooltip="{{ tooltip }}" class="{{ class }}">
+    {{ buttonLabel }}
+  </button>
+</div>
+<div *ngIf="buttonType === 'basic'">
+  <button mat-button matTooltip="{{ tooltip }}" class="{{ class }}">
+    {{ buttonLabel }}
+  </button>
+</div>

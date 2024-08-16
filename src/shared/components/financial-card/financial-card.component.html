@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="title">{{ title }}</div>
+  <div class="value-container">
+    <div class="value">{{ returnFormattedValue() }}</div>
+    <div *ngIf="value > 0">
+      <icon font-icon="arrow_circle_up" class="positive-icon"></icon>
+    </div>
+    <div *ngIf="value < 0">
+      <icon font-icon="arrow_circle_down" class="negative-icon"></icon>
+    </div>
+  </div>
+</div>

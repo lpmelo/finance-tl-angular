@@ -7,9 +7,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { FeaturesModule } from '../features/features.module';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
+import { LayoutHandlerComponent } from './components/layout-handler/layout-handler.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LayoutHandlerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

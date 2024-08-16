@@ -3,10 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
 import { InputFieldComponent } from './components/input-field/input-field.component';
 import { ButtonComponent } from './components/button/button.component';
+import { FinancialCardComponent } from './components/financial-card/financial-card.component';
+import { IconComponent } from './components/icon/icon.component';
+import { AppBarComponent } from './components/app-bar/app-bar.component';
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, ComponentsModule],
-  exports: [InputFieldComponent, ButtonComponent],
+  exports: [
+    InputFieldComponent,
+    ButtonComponent,
+    FinancialCardComponent,
+    IconComponent,
+    AppBarComponent,
+  ],
 })
 export class SharedModule {}
