@@ -12,6 +12,7 @@ import { FinancialCardComponent } from './financial-card/financial-card.componen
 import { IconComponent } from './icon/icon.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FinancialCardComponent,
     IconComponent,
     AppBarComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FinancialCardComponent,
     IconComponent,
     AppBarComponent,
+    CardComponent
   ],
 })
 export class ComponentsModule {}

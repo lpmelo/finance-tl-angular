@@ -6,6 +6,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { FinancialCardComponent } from './components/financial-card/financial-card.component';
 import { IconComponent } from './components/icon/icon.component';
 import { AppBarComponent } from './components/app-bar/app-bar.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [],
@@ -16,6 +17,7 @@ import { AppBarComponent } from './components/app-bar/app-bar.component';
     FinancialCardComponent,
     IconComponent,
     AppBarComponent,
+    CardComponent
   ],
 })
 export class SharedModule {}

@@ -1,0 +1,10 @@
+@import "../../../styles/variables";
+
+.card {
+  padding: 2rem;
+  background: linear-gradient($background-color 55%, #52527040);
+  border-color: $border-color-dark;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+}
