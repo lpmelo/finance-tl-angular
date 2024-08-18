@@ -28,11 +28,25 @@
         </div>
       </div>
       <div class="row">
-        <div></div>
+        <div *ngIf="gridModel.entrie">
+          <div class="col-12">
+            
+          </div>
+        </div>
         <div class="col-12 table-mode-container">
           <radio-container>
-            <radio-button />
-            <radio-button />
+            <radio-button
+              (click)="handleClickRadio($event)"
+              tooltip="Entradas"
+              checked="{{ gridModel.entrie }}"
+              value="entrie"
+            />
+            <radio-button
+              (click)="handleClickRadio($event)"
+              tooltip="Saídas"
+              checked="{{ gridModel.exit }}"
+              value="exit"
+            />
           </radio-container>
         </div>
       </div>

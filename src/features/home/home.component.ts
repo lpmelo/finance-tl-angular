@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  gridModel = { entrie: true, exit: false };
   lastTransactions = [
     {
       type: 'entrie',
@@ -44,4 +45,15 @@ export class HomeComponent {
       description: 'Jogos Switch 5/12',
     },
   ];
+
+  handleClickRadio(e: MouseEvent) {
+    if (e.target) {
+      const elementValue = (e.target as HTMLInputElement).value;
+      if (elementValue === 'entrie') {
+        return (this.gridModel = { entrie: true, exit: false });
+      }
+      return (this.gridModel = { entrie: false, exit: true });
+    }
+    return this.gridModel;
+  }
 }

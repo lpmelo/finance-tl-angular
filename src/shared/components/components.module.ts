@@ -15,6 +15,7 @@ import { CardComponent } from './card/card.component';
 import { RadioContainerComponent } from './radio-container/radio-container.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
+import { DataGridComponent } from './data-grid/data-grid.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
     CardComponent,
     RadioContainerComponent,
     RadioButtonComponent,
+    DataGridComponent,
   ],
   imports: [
     CommonModule,
