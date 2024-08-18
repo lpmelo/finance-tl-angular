@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { FinancialCardComponent } from './home/components/financial-card/financial-card.component';
 import { TransactionComponent } from './home/components/transaction/transaction.component';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { TransactionComponent } from './home/components/transaction/transaction.
     FinancialCardComponent,
     TransactionComponent,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, MatTooltip],
   exports: [LoginComponent],
 })
 export class FeaturesModule {}

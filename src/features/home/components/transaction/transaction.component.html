@@ -7,7 +7,7 @@
     ></icon>
   </div>
   <div class="t-row description">
-    <p class="description-text">{{ description }}</p>
+    <p class="description-text" matTooltip="{{ description }}">{{ description }}</p>
   </div>
   <div class="t-row value" [ngClass]="returnTrasactionClass(value, gender)">
     {{ returnFormattedValue(value) }}
