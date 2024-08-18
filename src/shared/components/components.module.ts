@@ -16,6 +16,7 @@ import { RadioContainerComponent } from './radio-container/radio-container.compo
 import { MatRadioModule } from '@angular/material/radio';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
 import { DataGridComponent } from './data-grid/data-grid.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DataGridComponent } from './data-grid/data-grid.component';
     MatButtonModule,
     MatTooltipModule,
     MatRadioModule,
+    MatTableModule
   ],
   exports: [
     InputFieldComponent,
@@ -47,6 +49,7 @@ import { DataGridComponent } from './data-grid/data-grid.component';
     CardComponent,
     RadioContainerComponent,
     RadioButtonComponent,
+    DataGridComponent
   ],
 })
 export class ComponentsModule {}

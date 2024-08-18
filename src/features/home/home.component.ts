@@ -7,6 +7,21 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   gridModel = { entrie: true, exit: false };
+
+  gridEntriesColumns = [
+    { name: 'description', title: 'Descrição Entrada' },
+    { name: 'value', title: 'Valor' },
+    { name: 'actions', title: 'Ações' },
+  ];
+
+  gridExitsColumns = [
+    { name: 'description', title: 'Descrição Saídas' },
+    { name: 'value', title: 'Valor' },
+    { name: 'actions', title: 'Ações' },
+  ];
+
+  data = [];
+
   lastTransactions = [
     {
       type: 'entrie',

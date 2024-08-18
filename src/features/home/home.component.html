@@ -27,12 +27,17 @@
           ></financial-card>
         </div>
       </div>
-      <div class="row">
-        <div *ngIf="gridModel.entrie">
-          <div class="col-12">
-            
+      <div class="row pt-5">
+        <div *ngIf="gridModel.entrie; else elseBlock">
+          <div class="col-12 h-100">
+            <data-grid [columns]="gridEntriesColumns" [data]="data"></data-grid>
           </div>
         </div>
+        <ng-template #elseBlock>
+          <div class="col-12 h-100">
+            <data-grid [columns]="gridExitsColumns" [data]="data"></data-grid>
+          </div>
+        </ng-template>
         <div class="col-12 table-mode-container">
           <radio-container>
             <radio-button
