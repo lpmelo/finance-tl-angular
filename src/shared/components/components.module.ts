@@ -12,6 +12,9 @@ import { IconComponent } from './icon/icon.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CardComponent } from './card/card.component';
+import { RadioContainerComponent } from './radio-container/radio-container.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { RadioButtonComponent } from './radio-button/radio-button.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { CardComponent } from './card/card.component';
     IconComponent,
     AppBarComponent,
     CardComponent,
+    RadioContainerComponent,
+    RadioButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -29,14 +34,17 @@ import { CardComponent } from './card/card.component';
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRadioModule,
   ],
   exports: [
     InputFieldComponent,
     ButtonComponent,
     IconComponent,
     AppBarComponent,
-    CardComponent
+    CardComponent,
+    RadioContainerComponent,
+    RadioButtonComponent,
   ],
 })
 export class ComponentsModule {}

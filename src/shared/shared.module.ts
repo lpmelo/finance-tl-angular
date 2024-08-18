@@ -6,6 +6,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { IconComponent } from './components/icon/icon.component';
 import { AppBarComponent } from './components/app-bar/app-bar.component';
 import { CardComponent } from './components/card/card.component';
+import { RadioContainerComponent } from './components/radio-container/radio-container.component';
+import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 
 @NgModule({
   declarations: [],
@@ -16,6 +18,8 @@ import { CardComponent } from './components/card/card.component';
     IconComponent,
     AppBarComponent,
     CardComponent,
+    RadioContainerComponent,
+    RadioButtonComponent,
   ],
 })
 export class SharedModule {}
