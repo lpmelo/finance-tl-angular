@@ -10,8 +10,10 @@
 }
 
 .content-row {
+  flex-direction: column-reverse;
   @media (min-width: 1200px) {
     height: 100%;
+    flex-direction: unset;
   }
 }
 
@@ -25,6 +27,10 @@
   color: $font-color;
   font-family: $font-family;
   font-size: 32px;
+  @media(max-width: 1199px){
+    margin-bottom: 20px;
+    font-size: 20px
+  }
 }
 
 .finance-card-container {

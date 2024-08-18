@@ -6,7 +6,9 @@
       font-icon="{{ returnTransactionIcon(gender) }}"
     ></icon>
   </div>
-  <div class="t-row description">{{ description }}</div>
+  <div class="t-row description">
+    <p class="description-text">{{ description }}</p>
+  </div>
   <div class="t-row value" [ngClass]="returnTrasactionClass(value, gender)">
     {{ returnFormattedValue(value) }}
   </div>

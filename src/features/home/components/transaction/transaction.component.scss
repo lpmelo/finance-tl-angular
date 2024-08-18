@@ -43,12 +43,26 @@
 }
 
 .description {
+  font-size: 18px;
   padding-left: 15px;
-  width: 70%;
+  width: 60%;
+}
+
+.description-text {
+  @media (max-width: 768px) {
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 10px;
+  }
 }
 
 .value {
-  width: 20%;
+  width: 30%;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 }
 
 .neutral {
