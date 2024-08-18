@@ -17,9 +17,9 @@ export class HomeComponent {
     {
       type: 'exit',
       value: -130.23,
-      description: 'Stout burguer',
+      description: 'Pagar vidinha',
       date: '2024-08-13',
-      gender: 'food',
+      gender: 'payment',
     },
     {
       type: 'exit',

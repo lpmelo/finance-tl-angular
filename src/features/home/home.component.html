@@ -1,24 +1,24 @@
 <div class="content-container container">
-  <div class="row h-100 w-100">
-    <div class="container col-12 col-md-7 h-100 p-0">
+  <div class="row w-100 content-row">
+    <div class="container col-12 col-xl-7 h-100 p-0">
       <div class="row pt-5 pb-5">
         <div class="title col-10">Estatísticas Gerais</div>
         <div class="col-2"><app-button label="filtrar"></app-button></div>
       </div>
       <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-xl-4 finance-card-container">
           <financial-card
             title="Entradas Mensais"
             value="12.39"
           ></financial-card>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-xl-4 finance-card-container">
           <financial-card
             title="Saídas Mensais"
             value="-12.39"
           ></financial-card>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-xl-4 finance-card-container">
           <financial-card
             title="Economias Mensais"
             value="500"
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-5 h-100">
+    <div class="col-12 col-xl-5 h-100">
       <card>
         <div class="container total-container">
           <div class="col-12 balance-card">
@@ -36,11 +36,18 @@
           <div class="col-12 transactions-card">
             <card>
               <div class="container p-0">
-                <div class="row pb-5">
+                <div class="row transaction-title">
                   <div class="col-12 title">Últimas Transações</div>
                 </div>
                 <div class="row">
-                  <div *ngFor=""></div>
+                  <div *ngFor="let transaction of lastTransactions; index as i">
+                    <transaction
+                      value="{{ transaction?.value }}"
+                      description="{{ transaction?.description }}"
+                      type="{{ transaction?.type }}"
+                      gender="{{ transaction?.gender }}"
+                    />
+                  </div>
                 </div>
               </div>
             </card>

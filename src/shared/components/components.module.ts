@@ -8,7 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { ButtonComponent } from './button/button.component';
-import { FinancialCardComponent } from './financial-card/financial-card.component';
 import { IconComponent } from './icon/icon.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -18,7 +17,6 @@ import { CardComponent } from './card/card.component';
   declarations: [
     InputFieldComponent,
     ButtonComponent,
-    FinancialCardComponent,
     IconComponent,
     AppBarComponent,
     CardComponent,
@@ -36,7 +34,6 @@ import { CardComponent } from './card/card.component';
   exports: [
     InputFieldComponent,
     ButtonComponent,
-    FinancialCardComponent,
     IconComponent,
     AppBarComponent,
     CardComponent

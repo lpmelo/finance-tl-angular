@@ -1,0 +1,13 @@
+<div class="col-12 transaction-container">
+  <div class="t-row icon-container">
+    <icon
+      class="icon"
+      [ngClass]="returnTrasactionClass(value, gender)"
+      font-icon="{{ returnTransactionIcon(gender) }}"
+    ></icon>
+  </div>
+  <div class="t-row description">{{ description }}</div>
+  <div class="t-row value" [ngClass]="returnTrasactionClass(value, gender)">
+    {{ returnFormattedValue(value) }}
+  </div>
+</div>

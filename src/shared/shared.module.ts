@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
 import { InputFieldComponent } from './components/input-field/input-field.component';
 import { ButtonComponent } from './components/button/button.component';
-import { FinancialCardComponent } from './components/financial-card/financial-card.component';
 import { IconComponent } from './components/icon/icon.component';
 import { AppBarComponent } from './components/app-bar/app-bar.component';
 import { CardComponent } from './components/card/card.component';
@@ -14,10 +13,9 @@ import { CardComponent } from './components/card/card.component';
   exports: [
     InputFieldComponent,
     ButtonComponent,
-    FinancialCardComponent,
     IconComponent,
     AppBarComponent,
-    CardComponent
+    CardComponent,
   ],
 })
 export class SharedModule {}
