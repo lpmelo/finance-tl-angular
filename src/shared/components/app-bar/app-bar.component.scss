@@ -34,8 +34,8 @@
   align-items: center;
 }
 
-.nav-button {
-  color: $white;
+:host ::ng-deep .nav-button {
+  color: $white !important;
   cursor: pointer;
 }
 

@@ -1,3 +1,14 @@
+@import "../../../styles/variables";
+
 .full-width {
   width: 100%;
+}
+
+.dark {
+  width: 100%;
+  color: #000000 !important;
+  background-color: $white !important;
+  &:hover{
+    background-color: rgba($white,0.85) !important;
+  }
 }

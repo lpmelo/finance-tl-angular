@@ -1,0 +1,27 @@
+@import "../../../styles/variables";
+
+:host
+  ::ng-deep
+  .mat-mdc-radio-button
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__outer-circle {
+  border-color: $white !important;
+}
+
+:host
+  ::ng-deep
+  .mat-mdc-radio-button
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__inner-circle {
+  border-color: $white !important;
+}
+
+:host ::ng-deep .mat-mdc-radio-button.mat-mdc-radio-checked .mat-ripple-element {
+    background-color: $white !important;
+}
+
+:host ::ng-deep .mat-mdc-radio-button.mat-mdc-radio-checked .mdc-radio__background::before {
+    background-color: $white !important;
+}
