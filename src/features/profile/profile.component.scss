@@ -1,0 +1,70 @@
+@import "../../styles/variables";
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  padding: 0px !important;
+}
+
+.teste{
+  height: 100%;
+  margin-right: 25px;
+}
+
+:host ::ng-deep .nav-button{
+
+  color: $white !important;
+}
+
+:host ::ng-deep .teste1{
+  height: 100%;
+  color:$white !important
+}
+
+:host ::ng-deep .teste2{
+  color:$white;
+  font-size: 20px;
+  margin-bottom: 15px !important;
+}
+
+.name{
+  color:white;
+}
+
+.data {
+ color: #dad6d69c;
+
+}
+
+.edit{
+  color: #dad6d69c;
+}
+
+.data-profile{
+  padding: 0px !important;
+  height: 150px;
+  margin-bottom: 30px !important;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+
+}
+
+.profile-image{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-card{
+  color:white;
+  font-size: 20px;
+}
+
+.card-info{
+  height: calc(100% - 300px);
+}
