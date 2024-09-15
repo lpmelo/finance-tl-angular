@@ -1,5 +1,9 @@
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { globalReducer } from '../store/global.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +21,11 @@ import { LayoutHandlerComponent } from './components/layout-handler/layout-handl
     FeaturesModule,
     SharedModule,
     CoreModule,
+    StoreModule.forRoot({ global: globalReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: !isDevMode(),
+    }),
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

@@ -1,9 +1,31 @@
 @import "../../../styles/variables";
 
+.root-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw !important;
+}
+
+.container {
+  margin: 0px;
+  padding: 0px;
+  width: calc(100% - 230px);
+  max-width: unset !important;
+}
+
+.upper {
+  padding: 0px !important;
+  height: 55px;
+}
+
+.content {
+  display: flex;
+  height: calc(100% - 55px);
+}
+
 .content-container {
   background-color: $background-color;
-  width: 100vw;
-  height: 90vh;
+  height: 100%;
   margin: 0px;
   max-width: unset;
   padding: 25px;

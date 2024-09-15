@@ -1,0 +1,22 @@
+@import "../../../styles/variables";
+
+.upper-bar-container{
+  height: 100%;
+}
+
+:host ::ng-deep .upper-button {
+  color: $white !important;
+  cursor: pointer;
+}
+
+.start-buttons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.end-buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
