@@ -6,6 +6,12 @@
   background-color: $background-color;
   max-width: unset;
   padding: 0px !important;
+  border-right: 1px solid $border-color-dark;
+  &.collapsed {
+    transform: translateX(-230px);
+    width: 0px;
+  }
+  transition: transform 500ms, width 500ms;
 }
 
 .logo-parent {
@@ -42,11 +48,11 @@
   color: $white !important;
   cursor: pointer;
 
-  &.mat-mdc-button .mat-mdc-button-persistent-ripple::before{
+  &.mat-mdc-button .mat-mdc-button-persistent-ripple::before {
     background-color: $white !important;
   }
-  
-  &.active{
+
+  &.active {
     background-color: rgba($white, 0.1) !important;
   }
 }

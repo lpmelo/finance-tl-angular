@@ -2,8 +2,8 @@
   <div class="col-6 start-buttons">
     <app-button
       type="icon"
-      icon="first_page"
-      tooltip="Esconder barra lateral"
+      [icon]="collapseState.icon"
+      [tooltip]="collapseState.tooltip"
       class="upper-button"
       (click)="collapseBar()"
     ></app-button>

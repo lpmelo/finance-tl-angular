@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { AppStateI } from '../../../store/global.reducer';
+import { selectLayoutCollapseBar } from '../../../store/layout-reducer/layout.selectors';
 
 interface ButtonObjI {
   label: string;
@@ -14,18 +17,20 @@ interface ButtonListI extends Array<ButtonObjI> {}
   styleUrl: './side-bar.component.scss',
 })
 export class SideBarComponent {
-  buttonList: ButtonListI = [{ label: 'Home', url: '/home' },];
+  private store = inject(Store);
+  buttonList: ButtonListI = [{ label: 'Home', url: '/home' }];
+  $collapsedSideBar = this.store.selectSignal(selectLayoutCollapseBar);
 
   constructor(private router: Router) {
+    this.onRouteChange(this.router);
+  }
+
+  onRouteChange(router: Router) {
     router.events.subscribe((val) => {
       const currentPath = window.location.pathname;
       const navButton = document.querySelector(`[data-url='${currentPath}']`);
       navButton?.classList.add('active');
     });
-  }
-
-  logout() {
-    window.location.replace('/login');
   }
 
   returnButtonClass(buttonUrl: string) {
@@ -34,5 +39,12 @@ export class SideBarComponent {
       return 'nav-button active';
     }
     return 'nav-button';
+  }
+
+  returnAppContainerClass() {
+    if (this.$collapsedSideBar()) {
+      return 'app-bar-container container m-0 collapsed';
+    }
+    return 'app-bar-container container m-0';
   }
 }

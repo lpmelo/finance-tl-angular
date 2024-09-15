@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { selectLayoutCollapseBar } from '../../../store/layout-reducer/layout.selectors';
 import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
+import { AppStateI } from '../../../store/global.reducer';
 
 @Component({
   selector: 'upper-bar',
@@ -9,10 +10,22 @@ import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
   styleUrl: './upper-bar.component.scss',
 })
 export class UpperBarComponent {
-  layout$: Observable<number>;
+  private store = inject(Store);
+  $collapsedSideBar = this.store.selectSignal(selectLayoutCollapseBar);
 
-  constructor(private store: Store<{ layout: number }>) {
-    this.layout$ = store.select('layout');
+  collapseState = {
+    icon: 'chevron_left',
+    tooltip: 'Esconder barra lateral',
+  };
+
+  constructor() {
+    this.onChangeCollapse();
+  }
+
+  onChangeCollapse() {
+    this.store.select(selectLayoutCollapseBar).subscribe((collapsedSideBar) => {
+      this.setCollapsedState(collapsedSideBar);
+    });
   }
 
   logout() {
@@ -21,5 +34,18 @@ export class UpperBarComponent {
 
   collapseBar() {
     this.store.dispatch(collapseSideBar());
+  }
+
+  setCollapsedState(collapsedSideBar: boolean) {
+    if (collapsedSideBar) {
+      return (this.collapseState = {
+        icon: 'chevron_right',
+        tooltip: 'Mostrar barra lateral',
+      });
+    }
+    return (this.collapseState = {
+      icon: 'chevron_left',
+      tooltip: 'Esconder barra lateral',
+    });
   }
 }
