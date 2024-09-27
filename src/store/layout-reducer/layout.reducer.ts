@@ -7,10 +7,11 @@ export const layoutReducer = createReducer(
   initialState,
   on(collapseSideBar, (state) => ({
     ...state,
-    collapsedSideBar: state.isMobileDevice ? false : !state.collapsedSideBar,
+    collapsedSideBar: !state.collapsedSideBar,
   })),
   on(mobileDevice, (state, { isMobileScreen }) => ({
     ...state,
+    collapsedSideBar: isMobileScreen,
     isMobileDevice: isMobileScreen,
   }))
 );

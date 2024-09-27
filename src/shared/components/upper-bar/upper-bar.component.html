@@ -1,14 +1,12 @@
 <div class="upper-bar-container row">
   <div class="col-6 start-buttons">
-    @if(!$isMobileDevice()){
-      <app-button
-        type="icon"
-        [icon]="collapseState.icon"
-        [tooltip]="collapseState.tooltip"
-        class="upper-button"
-        (click)="collapseBar()"
-      ></app-button>
-    }
+    <app-button
+      type="icon"
+      [icon]="collapseState.icon"
+      [tooltip]="collapseState.tooltip"
+      class="upper-button"
+      (click)="collapseBar()"
+    ></app-button>
   </div>
   <div class="col-6 end-buttons">
     <app-button

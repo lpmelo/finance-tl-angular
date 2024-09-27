@@ -1,6 +1,9 @@
-import { Component, inject, Signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectLayoutCollapseBar, selectLayoutIsMobileDevice } from '../../../store/layout-reducer/layout.selectors';
+import {
+  selectLayoutCollapseBar,
+  selectLayoutIsMobileDevice,
+} from '../../../store/layout-reducer/layout.selectors';
 import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
 
 @Component({
@@ -26,6 +29,12 @@ export class UpperBarComponent {
     this.store.select(selectLayoutCollapseBar).subscribe((collapsedSideBar) => {
       this.setCollapsedState(collapsedSideBar);
     });
+    
+    this.store
+      .select(selectLayoutIsMobileDevice)
+      .subscribe((isMobileDevice) => {
+        this.setCollapsedState(isMobileDevice);
+      });
   }
 
   logout() {
@@ -39,13 +48,17 @@ export class UpperBarComponent {
   setCollapsedState(collapsedSideBar: boolean) {
     if (collapsedSideBar) {
       return (this.collapseState = {
-        icon: 'chevron_right',
-        tooltip: 'Mostrar barra lateral',
+        icon: this.$isMobileDevice() ? 'menu' : 'chevron_right',
+        tooltip: this.$isMobileDevice()
+          ? 'Mostrar menu'
+          : 'Mostrar barra lateral',
       });
     }
     return (this.collapseState = {
-      icon: 'chevron_left',
-      tooltip: 'Esconder barra lateral',
+      icon: this.$isMobileDevice() ? 'menu' : 'chevron_left',
+      tooltip: this.$isMobileDevice()
+        ? 'Mostrar menu'
+        : 'Esconder barra lateral',
     });
   }
 }
