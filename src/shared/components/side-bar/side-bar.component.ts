@@ -2,7 +2,11 @@ import { Component, inject, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { AppStateI } from '../../../store/global.reducer';
-import { selectLayoutCollapseBar } from '../../../store/layout-reducer/layout.selectors';
+import {
+  selectLayoutCollapseBar,
+  selectLayoutIsMobileDevice,
+} from '../../../store/layout-reducer/layout.selectors';
+import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
 
 interface ButtonObjI {
   label: string;
@@ -20,6 +24,7 @@ export class SideBarComponent {
   private store = inject(Store);
   buttonList: ButtonListI = [{ label: 'Home', url: '/home' }];
   $collapsedSideBar = this.store.selectSignal(selectLayoutCollapseBar);
+  $isMobileDevice = this.store.selectSignal(selectLayoutIsMobileDevice);
 
   constructor(private router: Router) {
     this.onRouteChange(this.router);
@@ -33,6 +38,12 @@ export class SideBarComponent {
     });
   }
 
+  handleBlurSideBar() {
+    if (this.$isMobileDevice()) {
+      this.store.dispatch(collapseSideBar());
+    }
+  }
+
   returnButtonClass(buttonUrl: string) {
     const currentPath = window.location.pathname;
     if (buttonUrl === currentPath) {
@@ -42,9 +53,8 @@ export class SideBarComponent {
   }
 
   returnAppContainerClass() {
-    if (this.$collapsedSideBar()) {
-      return 'app-bar-container container m-0 collapsed';
-    }
-    return 'app-bar-container container m-0';
+    return `side-bar-container container m-0 ${
+      this.$collapsedSideBar() ? 'collapsed' : ''
+    } ${this.$isMobileDevice() ? 'mobile' : ''}`;
   }
 }

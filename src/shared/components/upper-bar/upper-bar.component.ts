@@ -29,7 +29,7 @@ export class UpperBarComponent {
     this.store.select(selectLayoutCollapseBar).subscribe((collapsedSideBar) => {
       this.setCollapsedState(collapsedSideBar);
     });
-    
+
     this.store
       .select(selectLayoutIsMobileDevice)
       .subscribe((isMobileDevice) => {
@@ -42,6 +42,9 @@ export class UpperBarComponent {
   }
 
   collapseBar() {
+    if (this.$isMobileDevice()) {
+      document.getElementById('side-bar-container')?.focus();
+    }
     this.store.dispatch(collapseSideBar());
   }
 

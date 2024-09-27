@@ -18,6 +18,7 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
 import { DataGridComponent } from './data-grid/data-grid.component';
 import { MatTableModule } from '@angular/material/table';
 import { UpperBarComponent } from './upper-bar/upper-bar.component';
+import { BackdropComponent } from './backdrop/backdrop.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { UpperBarComponent } from './upper-bar/upper-bar.component';
     RadioButtonComponent,
     DataGridComponent,
     UpperBarComponent,
+    BackdropComponent,
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { UpperBarComponent } from './upper-bar/upper-bar.component';
     CardComponent,
     RadioContainerComponent,
     RadioButtonComponent,
-    DataGridComponent
+    DataGridComponent,
+    BackdropComponent
   ],
 })
 export class ComponentsModule {}

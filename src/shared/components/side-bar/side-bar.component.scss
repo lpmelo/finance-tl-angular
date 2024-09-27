@@ -1,12 +1,16 @@
 @import "../../../styles/variables";
 
-.app-bar-container {
+.side-bar-container {
   width: 230px;
   height: 100vh;
   background-color: $background-color;
   max-width: unset;
   padding: 0px !important;
   border-right: 1px solid $border-color-dark;
+  &.mobile{
+    position: absolute;
+    z-index: 999;
+  }
   &.collapsed {
     transform: translateX(-230px);
     width: 0px;

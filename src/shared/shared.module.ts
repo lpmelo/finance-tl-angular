@@ -10,6 +10,7 @@ import { RadioContainerComponent } from './components/radio-container/radio-cont
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 import { DataGridComponent } from './components/data-grid/data-grid.component';
 import { UpperBarComponent } from './components/upper-bar/upper-bar.component';
+import { BackdropComponent } from './components/backdrop/backdrop.component';
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,8 @@ import { UpperBarComponent } from './components/upper-bar/upper-bar.component';
     CardComponent,
     RadioContainerComponent,
     RadioButtonComponent,
-    DataGridComponent
+    DataGridComponent,
+    BackdropComponent,
   ],
 })
 export class SharedModule {}

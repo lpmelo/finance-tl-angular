@@ -1,6 +1,7 @@
 <div class="root-container">
-  @if(!$isMobileDevice()){
-    <side-bar></side-bar>
+  <side-bar></side-bar>
+  @if($isMobileDevice() && !$collapseBar()){
+  <backdrop></backdrop>
   }
   <div [class]="returnContainerClass()">
     <div class="upper row">

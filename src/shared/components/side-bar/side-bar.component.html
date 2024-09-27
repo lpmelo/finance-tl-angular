@@ -1,4 +1,9 @@
-<div [class]="returnAppContainerClass()">
+<div
+  id="side-bar-container"
+  tabindex="0"
+  [class]="returnAppContainerClass()"
+  (blur)="handleBlurSideBar()"
+>
   <div class="logo-parent row">
     <div class="logo"></div>
   </div>
