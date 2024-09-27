@@ -1,6 +1,6 @@
 import { Component, inject, Signal } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectLayoutCollapseBar } from '../../../store/layout-reducer/layout.selectors';
+import { selectLayoutCollapseBar, selectLayoutIsMobileDevice } from '../../../store/layout-reducer/layout.selectors';
 import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
 import { AppStateI } from '../../../store/global.reducer';
 
@@ -12,6 +12,7 @@ import { AppStateI } from '../../../store/global.reducer';
 export class UpperBarComponent {
   private store = inject(Store);
   $collapsedSideBar = this.store.selectSignal(selectLayoutCollapseBar);
+  $isMobileDevice = this.store.selectSignal(selectLayoutIsMobileDevice);
 
   collapseState = {
     icon: 'chevron_left',

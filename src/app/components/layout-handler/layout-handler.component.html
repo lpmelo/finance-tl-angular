@@ -1,5 +1,7 @@
 <div class="root-container">
-  <side-bar></side-bar>
+  @if(!$isMobileDevice()){
+    <side-bar></side-bar>
+  }
   <div [class]="returnContainerClass()">
     <div class="upper row">
       <upper-bar></upper-bar>
