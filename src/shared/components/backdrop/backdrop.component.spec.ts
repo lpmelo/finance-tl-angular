@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppBarComponent } from './app-bar.component';
+import { BackdropComponent } from './backdrop.component';
 
-describe('AppBarComponent', () => {
-  let component: AppBarComponent;
-  let fixture: ComponentFixture<AppBarComponent>;
+describe('BackdropComponent', () => {
+  let component: BackdropComponent;
+  let fixture: ComponentFixture<BackdropComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppBarComponent]
+      declarations: [BackdropComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AppBarComponent);
+    fixture = TestBed.createComponent(BackdropComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

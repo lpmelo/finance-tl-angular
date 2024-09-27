@@ -1,9 +1,39 @@
 @import "../../../styles/variables";
 
+.root-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw !important;
+}
+
+.container {
+  margin: 0px;
+  padding: 0px;
+  width: calc(100% - 230px);
+  max-width: unset !important;
+  &.collapsed {
+    width: 100%;
+  }
+  transition: width 500ms;
+}
+
+.upper {
+  padding: 0px !important;
+  height: 55px;
+  & > * {
+    padding: 0px;
+  }
+}
+
+.content {
+  display: flex;
+  height: calc(100% - 55px);
+  overflow: auto;
+}
+
 .content-container {
   background-color: $background-color;
-  width: 100vw;
-  height: 90vh;
+  height: 100%;
   margin: 0px;
   max-width: unset;
   padding: 25px;

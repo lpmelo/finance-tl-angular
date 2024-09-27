@@ -9,7 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { ButtonComponent } from './button/button.component';
 import { IconComponent } from './icon/icon.component';
-import { AppBarComponent } from './app-bar/app-bar.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CardComponent } from './card/card.component';
 import { RadioContainerComponent } from './radio-container/radio-container.component';
@@ -17,17 +17,21 @@ import { MatRadioModule } from '@angular/material/radio';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
 import { DataGridComponent } from './data-grid/data-grid.component';
 import { MatTableModule } from '@angular/material/table';
+import { UpperBarComponent } from './upper-bar/upper-bar.component';
+import { BackdropComponent } from './backdrop/backdrop.component';
 
 @NgModule({
   declarations: [
     InputFieldComponent,
     ButtonComponent,
     IconComponent,
-    AppBarComponent,
+    SideBarComponent,
     CardComponent,
     RadioContainerComponent,
     RadioButtonComponent,
     DataGridComponent,
+    UpperBarComponent,
+    BackdropComponent,
   ],
   imports: [
     CommonModule,
@@ -45,11 +49,13 @@ import { MatTableModule } from '@angular/material/table';
     InputFieldComponent,
     ButtonComponent,
     IconComponent,
-    AppBarComponent,
+    SideBarComponent,
+    UpperBarComponent,
     CardComponent,
     RadioContainerComponent,
     RadioButtonComponent,
-    DataGridComponent
+    DataGridComponent,
+    BackdropComponent
   ],
 })
 export class ComponentsModule {}
