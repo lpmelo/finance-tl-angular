@@ -2,7 +2,6 @@ import { Component, inject, Signal } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectLayoutCollapseBar, selectLayoutIsMobileDevice } from '../../../store/layout-reducer/layout.selectors';
 import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
-import { AppStateI } from '../../../store/global.reducer';
 
 @Component({
   selector: 'upper-bar',
