@@ -22,15 +22,12 @@
       Meus Dados
       </card>
 
-
-
-
       <card class="row data-profile">
         <div class="col-2 profile-image"><img src="images/homem (1).png" class="profile"/></div>
         <div class="col-8 profile-info">
-          <p class="name">Lucas Pereira</p>
-          <p class="data">lpmelo</p>
-          <p class="data">lpmelo10&#64;gmail.com</p>
+          <p class="name">{{userData?.name}}</p>
+          <p class="data">{{userData?.nickname}}</p>
+          <p class="data">{{userData?.email}}</p>
         </div>
 
         <div class="col-2 edit">
@@ -43,19 +40,19 @@
           <div class="row g-3">
             <div class="col-6">
               <div class="mb-3">
-                <app-details title="Nome" subtitle="Lucas"></app-details>
+                <app-details title="Nome" subtitle={{userData?.name}}></app-details>
               </div>
               <div class="mb-3">
-                <app-details title="Email" subtitle="lpmelo10@gmail.com"></app-details>
+                <app-details title="Email" subtitle={{userData?.email}}></app-details>
               </div>
             </div>
 
             <div class="col-6">
               <div class="mb-3">
-                <app-details title="Apelido" subtitle="Lucas Pereira"></app-details>
+                <app-details title="Apelido" subtitle={{userData?.nickname}}></app-details>
               </div>
               <div class="mb-3">
-                <app-details title="Usuário" subtitle="lpmelo"></app-details>
+                <app-details title="Usuário" subtitle={{userData?.user}}></app-details>
               </div>
             </div>
           </div>
