@@ -19,6 +19,12 @@ import { DataGridComponent } from './data-grid/data-grid.component';
 import { MatTableModule } from '@angular/material/table';
 import { UpperBarComponent } from './upper-bar/upper-bar.component';
 import { BackdropComponent } from './backdrop/backdrop.component';
+import { ToastComponent } from './toast/toast.component';
+import {
+  MatSnackBarAction,
+  MatSnackBarActions,
+  MatSnackBarLabel,
+} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,7 @@ import { BackdropComponent } from './backdrop/backdrop.component';
     DataGridComponent,
     UpperBarComponent,
     BackdropComponent,
+    ToastComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +52,9 @@ import { BackdropComponent } from './backdrop/backdrop.component';
     MatRadioModule,
     MatTableModule,
     ReactiveFormsModule,
+    MatSnackBarLabel,
+    MatSnackBarActions,
+    MatSnackBarAction,
   ],
   exports: [
     InputFieldComponent,
@@ -56,7 +66,8 @@ import { BackdropComponent } from './backdrop/backdrop.component';
     RadioContainerComponent,
     RadioButtonComponent,
     DataGridComponent,
-    BackdropComponent
+    BackdropComponent,
+    ToastComponent,
   ],
 })
 export class ComponentsModule {}

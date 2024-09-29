@@ -28,7 +28,7 @@
           <app-button
             btnType="submit"
             label="Entrar"
-            [disabled]="!loginForm.valid"
+            [disabled]="!loginForm.valid || getLoading()"
           />
         </div>
       </form>
