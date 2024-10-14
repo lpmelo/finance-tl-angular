@@ -18,6 +18,7 @@ export interface AuthResponseI {
 })
 export class AuthServiceService {
   apiAuthUrl = `${environment.apiBaseUrl}/auth/login`;
+  apiCheckUrl = `${environment.apiBaseUrl}/auth/check`;
 
   constructor(private http: HttpClient) {}
 
@@ -27,5 +28,17 @@ export class AuthServiceService {
       .pipe(take(1));
 
     return await lastValueFrom(request);
+  }
+
+  async check(token: string) {
+    if (token) {
+      const request = this.http
+        .post(this.apiCheckUrl, {}, { headers: { Authorization: `Bearer ${token}` } })
+        .pipe(take(1));
+
+      return await lastValueFrom(request);
+    }
+
+    return false;
   }
 }

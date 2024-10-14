@@ -38,6 +38,7 @@ export class UpperBarComponent {
   }
 
   logout() {
+    window.localStorage.removeItem("authToken");
     window.location.replace('/login');
   }
 
