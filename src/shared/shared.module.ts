@@ -12,6 +12,7 @@ import { DataGridComponent } from './components/data-grid/data-grid.component';
 import { UpperBarComponent } from './components/upper-bar/upper-bar.component';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { ToastComponent } from './components/toast/toast.component';
+import { GuardianComponent } from './components/guardian/guardian.component';
 
 @NgModule({
   declarations: [],
@@ -28,6 +29,7 @@ import { ToastComponent } from './components/toast/toast.component';
     DataGridComponent,
     BackdropComponent,
     ToastComponent,
+    GuardianComponent
   ],
 })
 export class SharedModule {}
