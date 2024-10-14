@@ -12,6 +12,7 @@ import { FeaturesModule } from '../features/features.module';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 import { LayoutHandlerComponent } from './components/layout-handler/layout-handler.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LayoutHandlerComponent],
@@ -27,7 +28,7 @@ import { LayoutHandlerComponent } from './components/layout-handler/layout-handl
       logOnly: !isDevMode(),
     }),
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [provideAnimationsAsync(), provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

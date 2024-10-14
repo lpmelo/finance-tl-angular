@@ -1,0 +1,25 @@
+@import "../../../styles/variables";
+
+:host {
+  display: flex;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  &.success {
+    color: $green !important;
+  }
+
+  &.error {
+    color: $red !important;
+  }
+}
+
+:host ::ng-deep .icon-btn {
+  color: $white !important;
+  cursor: pointer;
+  font-size: 5px !important;
+}

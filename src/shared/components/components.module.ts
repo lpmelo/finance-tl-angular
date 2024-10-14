@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InputFieldComponent } from './input-field/input-field.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +19,12 @@ import { DataGridComponent } from './data-grid/data-grid.component';
 import { MatTableModule } from '@angular/material/table';
 import { UpperBarComponent } from './upper-bar/upper-bar.component';
 import { BackdropComponent } from './backdrop/backdrop.component';
+import { ToastComponent } from './toast/toast.component';
+import {
+  MatSnackBarAction,
+  MatSnackBarActions,
+  MatSnackBarLabel,
+} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,7 @@ import { BackdropComponent } from './backdrop/backdrop.component';
     DataGridComponent,
     UpperBarComponent,
     BackdropComponent,
+    ToastComponent,
   ],
   imports: [
     CommonModule,
@@ -43,7 +50,11 @@ import { BackdropComponent } from './backdrop/backdrop.component';
     MatButtonModule,
     MatTooltipModule,
     MatRadioModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    MatSnackBarLabel,
+    MatSnackBarActions,
+    MatSnackBarAction,
   ],
   exports: [
     InputFieldComponent,
@@ -55,7 +66,8 @@ import { BackdropComponent } from './backdrop/backdrop.component';
     RadioContainerComponent,
     RadioButtonComponent,
     DataGridComponent,
-    BackdropComponent
+    BackdropComponent,
+    ToastComponent,
   ],
 })
 export class ComponentsModule {}
