@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 
 export const collapseSideBar = createAction(
-  '[UpperBarComponent] CollapseSideBar'
+  '[Layout] CollapseSideBar'
 );
 export const mobileDevice = createAction(
-  '[LayoutHandlerComponent] MobileDevice',
+  '[Layout] MobileDevice',
   props<{ isMobileScreen: boolean }>()
 );

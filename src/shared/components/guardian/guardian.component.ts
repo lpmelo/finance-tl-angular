@@ -3,6 +3,11 @@ import {
   AuthResponseI,
   AuthServiceService,
 } from '../../../core/auth-service/auth-service.service';
+import { Store } from '@ngrx/store';
+import {
+  clearUserSettings,
+  saveUserToken,
+} from '../../../store/settings-reducer/settings.actions';
 
 @Component({
   selector: 'guardian',
@@ -11,8 +16,9 @@ import {
 })
 export class GuardianComponent implements OnInit {
   waitingCheck = false;
-  authService = inject(AuthServiceService);
   outRoutes = ['/login', '/signup'];
+  authService = inject(AuthServiceService);
+  store = inject(Store);
 
   ngOnInit(): void {
     this.verifyAuthentication();
@@ -27,7 +33,9 @@ export class GuardianComponent implements OnInit {
         .check(authToken)
         .then((res) => {
           const httpResponse = res as AuthResponseI;
-          localStorage.setItem('authToken', httpResponse.token);
+
+          this.sendUserTokenToStore(httpResponse.token);
+
           if (this.outRoutes.includes(actualUrl) || actualUrl === '/') {
             window.location.replace('/home');
 
@@ -39,10 +47,11 @@ export class GuardianComponent implements OnInit {
           }
         })
         .catch((err) => {
-          localStorage.removeItem('authToken');
+          this.clearUserData();
           this.hasToReturnToLoginPage(actualUrl);
         });
     } else {
+      this.clearUserData();
       this.hasToReturnToLoginPage(actualUrl);
     }
   }
@@ -57,5 +66,13 @@ export class GuardianComponent implements OnInit {
     } else {
       this.waitingCheck = false;
     }
+  }
+
+  sendUserTokenToStore(authToken: string) {
+    this.store.dispatch(saveUserToken({ token: authToken }));
+  }
+
+  clearUserData() {
+    this.store.dispatch(clearUserSettings());
   }
 }
