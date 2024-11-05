@@ -25,6 +25,7 @@ import {
   MatSnackBarActions,
   MatSnackBarLabel,
 } from '@angular/material/snack-bar';
+import { GuardianComponent } from './guardian/guardian.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {
     UpperBarComponent,
     BackdropComponent,
     ToastComponent,
+    GuardianComponent,
   ],
   imports: [
     CommonModule,
@@ -68,6 +70,7 @@ import {
     DataGridComponent,
     BackdropComponent,
     ToastComponent,
+    GuardianComponent
   ],
 })
 export class ComponentsModule {}

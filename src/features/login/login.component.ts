@@ -46,6 +46,8 @@ export class LoginComponent {
 
           openToast(this._snackBar, 'success', httpResponse?.message, 1500);
 
+          window.localStorage.setItem("authToken", httpResponse.token);
+
           window.location.replace('/home');
         })
         .catch((error) => {

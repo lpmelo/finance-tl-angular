@@ -5,6 +5,7 @@ import {
   selectLayoutIsMobileDevice,
 } from '../../../store/layout-reducer/layout.selectors';
 import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
+import { clearUserSettings } from '../../../store/settings-reducer/settings.actions';
 
 @Component({
   selector: 'upper-bar',
@@ -38,6 +39,7 @@ export class UpperBarComponent {
   }
 
   logout() {
+    this.store.dispatch(clearUserSettings());
     window.location.replace('/login');
   }
 
