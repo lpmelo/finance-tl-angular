@@ -2,6 +2,21 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RadioButtonComponent } from './radio-button.component';
 
+import { MatRadioModule } from '@angular/material/radio';
+
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
+describe('RadioButtonComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ RadioButtonComponent ],
+      imports: [ MatRadioModule ],
+      schemas: [NO_ERRORS_SCHEMA]
+    })
+    .compileComponents();
+  });
+});
+
 describe('RadioButtonComponent', () => {
   let component: RadioButtonComponent;
   let fixture: ComponentFixture<RadioButtonComponent>;

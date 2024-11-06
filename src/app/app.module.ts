@@ -14,6 +14,7 @@ import { CoreModule } from '../core/core.module';
 import { LayoutHandlerComponent } from './components/layout-handler/layout-handler.component';
 import { provideHttpClient } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [AppComponent, LayoutHandlerComponent],
   imports: [

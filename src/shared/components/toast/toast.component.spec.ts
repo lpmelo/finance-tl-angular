@@ -2,6 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToastComponent } from './toast.component';
 
+import { provideMockStore } from '@ngrx/store/testing';
+
+TestBed.configureTestingModule({
+  providers: [
+    provideMockStore({})
+  ]
+});
+
 describe('ToastComponent', () => {
   let component: ToastComponent;
   let fixture: ComponentFixture<ToastComponent>;
