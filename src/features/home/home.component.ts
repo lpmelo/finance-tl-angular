@@ -1,74 +1,80 @@
 import { Component } from '@angular/core';
 
+export type TransactionType = 'exit' | 'entrie';
+export type TransactionGender = 'payment' | 'food' | 'plot';
+
+export interface TransactionsI {
+  type: TransactionType;
+  value: number;
+  gender: TransactionGender;
+  date: string;
+  plotDetail?: string;
+  description: string;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  gridModel = { entrie: true, exit: false };
-
-  gridEntriesColumns = [
-    { name: 'description', title: 'Descrição Entrada' },
-    { name: 'value', title: 'Valor' },
-    { name: 'actions', title: 'Ações' },
-  ];
-
-  gridExitsColumns = [
-    { name: 'description', title: 'Descrição Saídas' },
-    { name: 'value', title: 'Valor' },
-    { name: 'actions', title: 'Ações' },
-  ];
-
-  data = [];
-
-  lastTransactions = [
+  lastTransactions: Array<TransactionsI> = [
+    {
+      type: 'entrie',
+      value: 180000,
+      description: 'Pagamento mensal derivado de um trabalho bem intenso e difícil',
+      date: '2024-08-14 16:35:31',
+      gender: 'payment',
+    },
     {
       type: 'entrie',
       value: 2500,
       description: 'Pagamento mensal',
-      date: '2024-08-13',
+      date: '2024-08-13 16:35:31',
+      gender: 'payment',
+    },
+    {
+      type: 'entrie',
+      value: 2500,
+      description: 'Pagamento mensal',
+      date: '2024-08-12 16:35:31',
+      gender: 'payment',
+    },
+    {
+      type: 'entrie',
+      value: 2500,
+      description: 'Pagamento mensal',
+      date: '2024-08-13 16:35:31',
       gender: 'payment',
     },
     {
       type: 'exit',
       value: -130.23,
       description: 'Pagar vidinha',
-      date: '2024-08-13',
+      date: '2024-08-11 16:35:31',
       gender: 'payment',
     },
     {
       type: 'exit',
       value: -85.42,
       description: 'Oficina da Pizza',
-      date: '2024-08-13',
+      date: '2024-08-11 16:35:31',
       gender: 'food',
     },
     {
       type: 'exit',
       value: -255.74,
       description: 'Kanzem',
-      date: '2024-08-13',
+      date: '2024-08-11 16:35:31',
       gender: 'food',
     },
     {
       type: 'exit',
       value: -80.23,
       gender: 'plot',
-      date: '2024-08-13',
+      date: '2024-08-13 16:35:31',
       plotDetail: '5/12',
       description: 'Jogos Switch 5/12',
     },
   ];
-
-  handleClickRadio(e: MouseEvent) {
-    if (e.target) {
-      const elementValue = (e.target as HTMLInputElement).value;
-      if (elementValue === 'entrie') {
-        return (this.gridModel = { entrie: true, exit: false });
-      }
-      return (this.gridModel = { entrie: false, exit: true });
-    }
-    return this.gridModel;
-  }
 }

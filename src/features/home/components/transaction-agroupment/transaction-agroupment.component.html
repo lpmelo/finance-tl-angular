@@ -1,0 +1,15 @@
+@if(agrouppedTransactions.length> 0){
+
+<ng-container *ngFor="let agrouppedItem of agrouppedTransactions">
+  <div class="agroupment-title">{{ agrouppedItem.dateFormatted }}</div>
+  <div *ngFor="let transaction of agrouppedItem.transactions; index as i">
+    <transaction
+      value="{{ transaction?.value }}"
+      description="{{ transaction?.description }}"
+      date="{{ convertDateToHours(transaction?.date) }}"
+      type="{{ transaction?.type }}"
+      gender="{{ transaction?.gender }}"
+    />
+  </div>
+</ng-container>
+}@else{ }

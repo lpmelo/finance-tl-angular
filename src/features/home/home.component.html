@@ -27,33 +27,6 @@
           ></financial-card>
         </div>
       </div>
-      <div class="row pt-5">
-        @if(gridModel.entrie){
-        <div class="col-12">
-          <data-grid [columns]="gridEntriesColumns" [data]="data"></data-grid>
-        </div>
-        } @else {
-        <div class="col-12">
-          <data-grid [columns]="gridExitsColumns" [data]="data"></data-grid>
-        </div>
-        }
-        <div class="col-12 table-mode-container">
-          <radio-container>
-            <radio-button
-              (click)="handleClickRadio($event)"
-              tooltip="Entradas"
-              checked="{{ gridModel.entrie }}"
-              value="entrie"
-            />
-            <radio-button
-              (click)="handleClickRadio($event)"
-              tooltip="Saídas"
-              checked="{{ gridModel.exit }}"
-              value="exit"
-            />
-          </radio-container>
-        </div>
-      </div>
     </div>
 
     <div class="row col-12 py-5">
@@ -68,15 +41,10 @@
                 <div class="row transaction-title">
                   <div class="col-12 title">Últimas Transações</div>
                 </div>
-                <div class="row">
-                  <div *ngFor="let transaction of lastTransactions; index as i">
-                    <transaction
-                      value="{{ transaction?.value }}"
-                      description="{{ transaction?.description }}"
-                      type="{{ transaction?.type }}"
-                      gender="{{ transaction?.gender }}"
-                    />
-                  </div>
+                <div class="row transaction-items">
+                  <transaction-agroupment
+                    [transactions]="lastTransactions"
+                  ></transaction-agroupment>
                 </div>
               </div>
             </card>

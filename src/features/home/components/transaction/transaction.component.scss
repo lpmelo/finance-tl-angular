@@ -7,7 +7,6 @@
 }
 .t-row {
   display: flex;
-  width: 100%;
   height: 60px;
   align-items: center;
   @media (min-width: 1500px) {
@@ -21,45 +20,76 @@
 .icon-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   width: 10%;
+  & > p {
+    cursor: default;
+    margin: 0px !important;
+  }
 }
 
 .icon {
   display: flex;
+  width: 100%;
   align-items: center;
-
+  height: 50%;
   @media (max-width: 768px) {
     transform: scale(1);
   }
 
   @media (min-width: 1200px) {
+    padding-top: 10px;
+    padding-bottom: 5px;
     transform: scale(1.3);
   }
 
   @media (min-width: 1900px) {
+    padding-top: 10px;
+    padding-bottom: 5px;
     transform: scale(1.5);
   }
 }
 
+.transaction-hour {
+  font-size: 10px;
+  height: 50%;
+  @media (max-width: 768px) {
+    font-size: 8px;
+  }
+}
+
 .description {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 18px;
   padding-left: 15px;
+  padding-right: 20px;
   width: 60%;
+  & > p {
+    cursor: default;
+    margin: 0px !important;
+  }
 }
 
 .description-text {
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   @media (max-width: 768px) {
-    width: 120px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     font-size: 10px;
   }
 }
 
 .value {
   width: 30%;
+  & > p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   @media (max-width: 768px) {
     font-size: 10px;
   }

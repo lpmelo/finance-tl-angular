@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FinancialCardComponent } from './home/components/financial-card/financial-card.component';
 import { TransactionComponent } from './home/components/transaction/transaction.component';
 import { MatTooltip } from '@angular/material/tooltip';
+import { TransactionAgroupmentComponent } from './home/components/transaction-agroupment/transaction-agroupment.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MatTooltip } from '@angular/material/tooltip';
     HomeComponent,
     FinancialCardComponent,
     TransactionComponent,
+    TransactionAgroupmentComponent,
   ],
   imports: [CommonModule, SharedModule, MatTooltip, ReactiveFormsModule],
   exports: [LoginComponent],

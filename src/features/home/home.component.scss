@@ -57,7 +57,7 @@
   }
 }
 
-.table-mode-container {
-  display: flex;
-  justify-content: center;
+.transaction-items{
+  max-height: 375px;
+  overflow-y: scroll;
 }

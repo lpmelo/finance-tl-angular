@@ -12,6 +12,7 @@ type TransactionGendersT = {
 export class TransactionComponent {
   @Input({ alias: 'value', transform: numberAttribute }) value: number = 0;
   @Input({ alias: 'description' }) description!: string;
+  @Input({ alias: 'date' }) date!: string;
   @Input({ alias: 'type' }) type: string = 'entrie';
   @Input({ alias: 'gender' }) gender: string = 'payment';
 

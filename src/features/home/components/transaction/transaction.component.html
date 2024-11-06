@@ -5,11 +5,18 @@
       [ngClass]="returnTrasactionClass(value, gender)"
       font-icon="{{ returnTransactionIcon(gender) }}"
     ></icon>
+    @if(date){
+    <p class="transaction-hour">{{ date }}</p>
+    }
   </div>
   <div class="t-row description">
-    <p class="description-text" matTooltip="{{ description }}">{{ description }}</p>
+    <p class="description-text" matTooltip="{{ description }}">
+      {{ description }}
+    </p>
   </div>
   <div class="t-row value" [ngClass]="returnTrasactionClass(value, gender)">
-    {{ returnFormattedValue(value) }}
+    <p matTooltip="{{ returnFormattedValue(value) }}">
+      {{ returnFormattedValue(value) }}
+    </p>
   </div>
 </div>
