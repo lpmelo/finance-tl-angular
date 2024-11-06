@@ -1,0 +1,25 @@
+.loader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.image-container{
+    animation: rotateY-anim 1.7s linear infinite;
+}
+
+@keyframes rotateY-anim {
+    0% {
+      transform: scale(1.0);
+    }
+
+    50%{
+        transform: scale(1.1)
+    }
+  
+    100% {
+      transform: scale(1.0)
+    }
+  }

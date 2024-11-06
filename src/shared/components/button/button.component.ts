@@ -10,4 +10,7 @@ export class ButtonComponent {
   @Input({ alias: 'type' }) buttonType: string = 'flat';
   @Input({ alias: 'class' }) class: string = 'full-width';
   @Input({ alias: 'tooltip' }) tooltip: string | undefined;
+  @Input({ alias: 'icon' }) icon!: string;
+  @Input() disabled!: boolean;
+  @Input() btnType!: string;
 }

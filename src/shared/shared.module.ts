@@ -4,11 +4,15 @@ import { ComponentsModule } from './components/components.module';
 import { InputFieldComponent } from './components/input-field/input-field.component';
 import { ButtonComponent } from './components/button/button.component';
 import { IconComponent } from './components/icon/icon.component';
-import { AppBarComponent } from './components/app-bar/app-bar.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { CardComponent } from './components/card/card.component';
 import { RadioContainerComponent } from './components/radio-container/radio-container.component';
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 import { DataGridComponent } from './components/data-grid/data-grid.component';
+import { UpperBarComponent } from './components/upper-bar/upper-bar.component';
+import { BackdropComponent } from './components/backdrop/backdrop.component';
+import { ToastComponent } from './components/toast/toast.component';
+import { GuardianComponent } from './components/guardian/guardian.component';
 
 @NgModule({
   declarations: [],
@@ -17,11 +21,15 @@ import { DataGridComponent } from './components/data-grid/data-grid.component';
     InputFieldComponent,
     ButtonComponent,
     IconComponent,
-    AppBarComponent,
+    SideBarComponent,
+    UpperBarComponent,
     CardComponent,
     RadioContainerComponent,
     RadioButtonComponent,
-    DataGridComponent
+    DataGridComponent,
+    BackdropComponent,
+    ToastComponent,
+    GuardianComponent
   ],
 })
 export class SharedModule {}

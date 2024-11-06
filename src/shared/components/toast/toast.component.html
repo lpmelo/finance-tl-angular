@@ -1,0 +1,17 @@
+@if(type){
+<span class="icon-container {{ type }}">
+  <icon [font-icon]="icons[type]"></icon>
+</span>
+}
+<span class="example-pizza-party" matSnackBarLabel> {{ message }} </span>
+<span matSnackBarActions>
+  <app-button
+    type="icon"
+    icon="close"
+    class="icon-btn"
+    [disabled]="false"
+    matSnackBarAction
+    (click)="snackBarRef.dismissWithAction()"
+  >
+  </app-button>
+</span>

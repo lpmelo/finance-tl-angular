@@ -1,4 +1,14 @@
 <mat-form-field class="{{ class }}">
   <mat-label>{{ label }}</mat-label>
-  <input matInput placeholder="{{ placeholder }}" type="{{ type }}" />
+  <input
+    #inputRef
+    matInput
+    placeholder="{{ placeholder }}"
+    type="{{ type }}"
+    [formControl]="convertToFormControl(formControl)"
+  />
+  <mat-error *ngIf="convertToFormControl(formControl).errors">
+    Campo obrigatório
+  </mat-error>
+  <mat-error> </mat-error>
 </mat-form-field>

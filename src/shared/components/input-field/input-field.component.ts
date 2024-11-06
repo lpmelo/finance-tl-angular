@@ -1,13 +1,20 @@
 import { Component, Input } from '@angular/core';
+import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'input-field',
   templateUrl: './input-field.component.html',
-  styleUrl: './input-field.component.scss',
+  styleUrls: ['./input-field.component.scss'],
 })
 export class InputFieldComponent {
-  @Input({ alias: 'label' }) label: string | undefined;
-  @Input({ alias: 'placeholder' }) placeholder: string | undefined;
-  @Input({ alias: 'type' }) type: string | undefined;
-  @Input({ alias: 'class' }) class: string = 'full-width';
+  @Input() label: string | undefined;
+  @Input() placeholder: string | undefined;
+  @Input() type: string | undefined;
+  @Input() class: string = 'full-width';
+  @Input('control') formControl!: AbstractControl;
+
+  convertToFormControl(abstractControl: AbstractControl) {
+    const control = abstractControl as FormControl;
+    return control;
+  }
 }

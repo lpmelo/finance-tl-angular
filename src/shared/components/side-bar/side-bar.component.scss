@@ -1,0 +1,68 @@
+@import "../../../styles/variables";
+
+.side-bar-container {
+  width: 230px;
+  height: 100vh;
+  background-color: $background-color;
+  max-width: unset;
+  padding: 0px !important;
+  border-right: 1px solid $border-color-dark;
+  &.mobile{
+    position: absolute;
+    z-index: 999;
+  }
+  &.collapsed {
+    transform: translateX(-230px);
+    width: 0px;
+  }
+  transition: transform 500ms, width 500ms;
+}
+
+.logo-parent {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background-image: url("/images/LogoCompleto.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 500ms;
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+    transition: transform 500ms;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:host ::ng-deep .nav-button {
+  width: 100%;
+  color: $white !important;
+  cursor: pointer;
+
+  &.mat-mdc-button .mat-mdc-button-persistent-ripple::before {
+    background-color: $white !important;
+  }
+
+  &.active {
+    background-color: rgba($white, 0.1) !important;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}

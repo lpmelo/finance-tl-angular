@@ -1,10 +1,33 @@
-<div *ngIf="buttonType === 'flat'">
-  <button mat-flat-button matTooltip="{{ tooltip }}" class="{{ class }}">
+<ng-container *ngIf="buttonType === 'flat'">
+  <button
+    type="{{ btnType }}"
+    mat-flat-button
+    matTooltip="{{ tooltip }}"
+    class="{{ class }}"
+    [disabled]="disabled"
+  >
     {{ buttonLabel }}
   </button>
-</div>
-<div *ngIf="buttonType === 'basic'">
-  <button mat-button matTooltip="{{ tooltip }}" class="{{ class }}">
+</ng-container>
+<ng-container *ngIf="buttonType === 'basic'">
+  <button
+    type="{{ btnType }}"
+    mat-button
+    matTooltip="{{ tooltip }}"
+    class="{{ class }}"
+    [disabled]="disabled"
+  >
     {{ buttonLabel }}
   </button>
-</div>
+</ng-container>
+<ng-container *ngIf="buttonType === 'icon'">
+  <button
+    type="{{ btnType }}"
+    mat-icon-button
+    matTooltip="{{ tooltip }}"
+    class="{{ class }}"
+    disabled="{{disabled}}"
+  >
+    <icon [font-icon]="icon"></icon>
+  </button>
+</ng-container>
