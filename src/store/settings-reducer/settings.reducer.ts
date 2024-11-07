@@ -5,24 +5,33 @@ import { jwtDecode, JwtPayload } from 'jwt-decode';
 export interface SettingsStateI {
   userSettings: {
     authToken: string | null;
-    userData: object | null;
+    userData: UserDataJwtPayload;
   };
 }
 
-interface userDataJwtPayload {
-  id_user_pk: number;
-  mail: string;
-  name: string;
-  nickname: string;
-  username: string;
+export interface UserDataJwtPayload {
+  id_user_pk: number | null;
+  mail: string | null;
+  name: string | null;
+  nickname: string | null;
+  username: string | null;
 }
 
 interface FinanceJwtPayloadI extends JwtPayload {
-  data: userDataJwtPayload;
+  data: UserDataJwtPayload;
 }
 
 export const initialState: SettingsStateI = {
-  userSettings: { authToken: null, userData: {} },
+  userSettings: {
+    authToken: null,
+    userData: {
+      id_user_pk: null,
+      mail: null,
+      name: null,
+      nickname: null,
+      username: null,
+    },
+  },
 };
 
 export const settingsReducer = createReducer(

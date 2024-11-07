@@ -1,12 +1,14 @@
 <div class="content-container container">
+  <div class="row w-100">
+    <div class="row pt-5 pb-5">
+      <div class="title col-12 col-xl-10">Bem vindo(a) {{$userData().nickname}}</div>
+      <div class="col-12 col-xl-2">
+        <app-button label="filtrar" class="dark"></app-button>
+      </div>
+    </div>
+  </div>
   <div class="row w-100 content-row">
     <div class="row col-12 p-0">
-      <div class="row pt-5 pb-5">
-        <div class="title col-12 col-xl-10">Estatísticas Gerais</div>
-        <div class="col-12 col-xl-2">
-          <app-button label="filtrar" class="dark"></app-button>
-        </div>
-      </div>
       <div class="row">
         <div class="col-12 col-xl-4 finance-card-container">
           <financial-card
@@ -29,7 +31,7 @@
       </div>
     </div>
 
-    <div class="row col-12 py-5">
+    <div class="row col-12 monetary-info">
       <card>
         <div class="container total-container">
           <div class="col-12 balance-card">

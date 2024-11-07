@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { selectUserData } from '../../store/settings-reducer/settings.selectors';
+import { UserDataJwtPayload } from '../../store/settings-reducer/settings.reducer';
 
 export type TransactionType = 'exit' | 'entrie';
 export type TransactionGender = 'payment' | 'food' | 'plot';
@@ -18,11 +21,16 @@ export interface TransactionsI {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  store = inject(Store);
+  $userData: Signal<UserDataJwtPayload> =
+    this.store.selectSignal(selectUserData);
+
   lastTransactions: Array<TransactionsI> = [
     {
       type: 'entrie',
       value: 180000,
-      description: 'Pagamento mensal derivado de um trabalho bem intenso e difícil',
+      description:
+        'Pagamento mensal derivado de um trabalho bem intenso e difícil',
       date: '2024-08-14 16:35:31',
       gender: 'payment',
     },
