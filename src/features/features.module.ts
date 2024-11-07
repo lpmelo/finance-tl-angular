@@ -8,6 +8,7 @@ import { FinancialCardComponent } from './home/components/financial-card/financi
 import { TransactionComponent } from './home/components/transaction/transaction.component';
 import { MatTooltip } from '@angular/material/tooltip';
 import { TransactionAgroupmentComponent } from './home/components/transaction-agroupment/transaction-agroupment.component';
+import { FabSliderComponent } from './home/components/fab-slider/fab-slider.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TransactionAgroupmentComponent } from './home/components/transaction-ag
     FinancialCardComponent,
     TransactionComponent,
     TransactionAgroupmentComponent,
+    FabSliderComponent,
   ],
   imports: [CommonModule, SharedModule, MatTooltip, ReactiveFormsModule],
   exports: [LoginComponent],

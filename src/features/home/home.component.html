@@ -1,7 +1,12 @@
 <div class="content-container container">
+  @if($isMobile()){
+  <fab-slider [buttonList]="fabButtonList"></fab-slider>
+  }
   <div class="row w-100">
     <div class="row pt-5 pb-5">
-      <div class="title col-12 col-xl-10">Bem vindo(a) {{$userData().nickname}}</div>
+      <div class="title col-12 col-xl-10">
+        Bem vindo(a) {{ $userData().nickname }}
+      </div>
       <div class="col-12 col-xl-2">
         <app-button label="filtrar" class="dark"></app-button>
       </div>

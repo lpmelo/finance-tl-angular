@@ -2,6 +2,8 @@ import { Component, inject, Signal } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectUserData } from '../../store/settings-reducer/settings.selectors';
 import { UserDataJwtPayload } from '../../store/settings-reducer/settings.reducer';
+import { selectLayoutIsMobileDevice } from '../../store/layout-reducer/layout.selectors';
+import { ButtonListT } from './components/fab-slider/fab-slider.component';
 
 export type TransactionType = 'exit' | 'entrie';
 export type TransactionGender = 'payment' | 'food' | 'plot';
@@ -24,6 +26,11 @@ export class HomeComponent {
   store = inject(Store);
   $userData: Signal<UserDataJwtPayload> =
     this.store.selectSignal(selectUserData);
+  $isMobile = this.store.selectSignal(selectLayoutIsMobileDevice);
+
+  fabButtonList: ButtonListT = [
+    { icon: 'home', onClick: this.handleClickFabAddButton, className: 'TESTE' },
+  ];
 
   lastTransactions: Array<TransactionsI> = [
     {
@@ -85,4 +92,8 @@ export class HomeComponent {
       description: 'Jogos Switch 5/12',
     },
   ];
+
+  handleClickFabAddButton(e: MouseEvent) {
+    console.log(e.target);
+  }
 }

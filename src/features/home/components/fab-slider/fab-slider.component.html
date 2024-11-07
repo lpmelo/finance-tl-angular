@@ -1,0 +1,20 @@
+<app-button
+  type="fab"
+  icon="wallet"
+  tooltip="teste"
+  class="principal-button"
+  (click)="handleClick($event)"
+  (focusout)="handleBlur($event)"
+></app-button>
+<div class="fab-container hide">
+  <ng-container *ngFor="let button of buttonList; index as i">
+    <app-button
+      type="fab"
+      [icon]="button.icon"
+      [class]="returnButtonClass(button.className)"
+      [tooltip]="button.tooltip"
+      (click)="button.onClick($event)"
+    >
+    </app-button>
+  </ng-container>
+</div>

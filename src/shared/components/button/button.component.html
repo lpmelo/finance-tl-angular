@@ -14,6 +14,7 @@
     type="{{ btnType }}"
     mat-button
     matTooltip="{{ tooltip }}"
+    [matTooltipPosition]="tooltipPosition"
     class="{{ class }}"
     [disabled]="disabled"
   >
@@ -26,8 +27,19 @@
     mat-icon-button
     matTooltip="{{ tooltip }}"
     class="{{ class }}"
-    disabled="{{disabled}}"
+    disabled="{{ disabled }}"
   >
-    <icon [font-icon]="icon"></icon>
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</ng-container>
+<ng-container *ngIf="buttonType === 'fab'">
+  <button
+    type="{{ btnType }}"
+    mat-fab
+    matTooltip="{{ tooltip }}"
+    class="{{ class }}"
+    [disabled]="disabled"
+  >
+    <mat-icon>{{ icon }}</mat-icon>
   </button>
 </ng-container>

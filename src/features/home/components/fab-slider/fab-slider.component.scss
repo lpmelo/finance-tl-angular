@@ -1,0 +1,55 @@
+:host ::ng-deep .add-icon {
+  // color: black;
+}
+.principal-button {
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  z-index: 10;
+  position: fixed;
+}
+
+.fab-button {
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  z-index: 9;
+  position: fixed;
+}
+
+@mixin slideButtonY($distance, $duration) {
+  transform: translateY(-#{$distance}px);
+  transition: transform #{$duration}s;
+}
+
+.fab-container {
+  &.hide {
+    :nth-child(1) {
+      @include slideButtonY(0, 0.2);
+    }
+    :nth-child(2) {
+      @include slideButtonY(0, 0.2);
+    }
+    :nth-child(3) {
+      @include slideButtonY(0, 0.2);
+    }
+    :nth-child(4) {
+      @include slideButtonY(0, 0.2);
+    }
+  }
+
+  &.active {
+    :nth-child(1) {
+      @include slideButtonY(80, 0.2);
+    }
+    :nth-child(2) {
+      @include slideButtonY(160, 0.2);
+    }
+    :nth-child(3) {
+      @include slideButtonY(240, 0.2);
+    }
+    :nth-child(4) {
+      @include slideButtonY(320, 0.2);
+    }
+  }
+}
