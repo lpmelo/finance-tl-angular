@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 export type ButtonListT = Array<ButtonI>;
 
@@ -38,13 +38,5 @@ export class FabSliderComponent {
       element.classList.add('hide');
       element?.classList?.remove('active');
     }
-  }
-
-  returnButtonClass(buttonClassName: string | undefined) {
-    if (buttonClassName) {
-      const string = `fab-button ${buttonClassName}`;
-      return string;
-    }
-    return 'fab-button';
   }
 }

@@ -11,8 +11,8 @@
     <app-button
       type="fab"
       [icon]="button.icon"
-      [class]="returnButtonClass(button.className)"
-      [tooltip]="button.tooltip"
+      class="fab-button"
+      [tooltip]="button?.tooltip"
       (click)="button.onClick($event)"
     >
     </app-button>

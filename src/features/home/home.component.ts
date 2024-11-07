@@ -29,7 +29,8 @@ export class HomeComponent {
   $isMobile = this.store.selectSignal(selectLayoutIsMobileDevice);
 
   fabButtonList: ButtonListT = [
-    { icon: 'home', onClick: this.handleClickFabAddButton, className: 'TESTE' },
+    { icon: 'edit', onClick: this.handleClickFabAddButton },
+    { icon: 'add', onClick: this.handleClickFabAddButton },
   ];
 
   lastTransactions: Array<TransactionsI> = [

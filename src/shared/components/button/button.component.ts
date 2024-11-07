@@ -17,7 +17,7 @@ type TooltipPositionT =
 export class ButtonComponent {
   @Input({ alias: 'label' }) buttonLabel: string | undefined;
   @Input({ alias: 'type' }) buttonType: ButtonTypeT = 'flat';
-  @Input({ alias: 'class' }) class: string = 'full-width';
+  @Input({ alias: 'class' }) class?: string = 'full-width';
   @Input({ alias: 'tooltip' }) tooltip: string | undefined;
   @Input({ alias: 'tooltip-position' }) tooltipPosition: TooltipPositionT =
     'below';
