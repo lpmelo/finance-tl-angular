@@ -58,11 +58,22 @@ export class SideBarComponent {
     } ${this.$isMobileDevice() ? 'mobile' : ''}`;
   }
 
-  handleClickNavBtn(e: MouseEvent) {
+  returnButtonTooltip(label: string, url: string) {
+    const currentPath = window.location.pathname;
+    if (url === currentPath) {
+      return 'Você está aqui';
+    }
+    return `Ir para ${label}`;
+  }
+
+  handleClickNavBtn(e: MouseEvent, url?: string) {
     const element = e.target as HTMLElement;
     const buttonElement = element.parentElement as HTMLButtonElement;
+    const currentPath = window.location.pathname;
 
-    if (buttonElement?.value) {
+    if (url && url != currentPath) {
+      this.router.navigateByUrl(url);
+    } else if (buttonElement?.value && buttonElement?.value != currentPath) {
       this.router.navigateByUrl(buttonElement.value);
     }
   }

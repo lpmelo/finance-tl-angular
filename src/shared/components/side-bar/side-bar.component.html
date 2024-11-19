@@ -4,7 +4,7 @@
   [class]="returnAppContainerClass()"
   (blur)="handleBlurSideBar()"
 >
-  <div class="logo-parent row">
+  <div (click)="handleClickNavBtn($event, '/home')" class="logo-parent row">
     <div class="logo"></div>
   </div>
   <div class="navigation row">
@@ -14,12 +14,9 @@
         [label]="button.label"
         [class]="returnButtonClass(button.url)"
         [value]="button.url"
-        tooltip="Ir para {{ button.label }}"
+        [tooltip]="returnButtonTooltip(button.label, button.url)"
         (click)="handleClickNavBtn($event)"
       ></app-button>
     </ng-container>
   </div>
-  <!-- <div class="actions col-2">
-    <icon font-icon="logout" class="nav-button" tooltip="Sair" (click)="logout()"></icon>
-  </div> -->
 </div>
