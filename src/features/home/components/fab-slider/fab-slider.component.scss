@@ -1,17 +1,5 @@
 @import "../../../../styles/variables";
 
-:host ::ng-deep .mat-accent.mat-mdc-fab,
-.mat-accent.mat-mdc-mini-fab {
-  --mdc-fab-container-color: #ffffff;
-  --mdc-fab-small-container-color: #ffffff;
-  --mat-fab-foreground-color: $black;
-  --mat-fab-state-layer-color: $black;
-  --mat-fab-ripple-color: rgba(0, 0, 110, 0.12);
-  --mat-fab-small-foreground-color: $black;
-  --mat-fab-small-state-layer-color: $black;
-  --mat-fab-small-ripple-color: #00006e1f;
-}
-
 .principal-button {
   bottom: 0;
   right: 0;

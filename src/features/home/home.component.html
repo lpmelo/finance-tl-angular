@@ -37,27 +37,35 @@
     </div>
 
     <div class="row col-12 monetary-info">
-      <card>
-        <div class="container total-container">
-          <div class="col-12 balance-card">
-            <financial-card title="Saldo Total" value="1500" />
-          </div>
-          <div class="col-12 transactions-card">
-            <card>
-              <div class="container p-0">
-                <div class="row transaction-title">
-                  <div class="col-12 title">Últimas Transações</div>
-                </div>
-                <div class="row transaction-items">
-                  <transaction-agroupment
-                    [transactions]="lastTransactions"
-                  ></transaction-agroupment>
-                </div>
-              </div>
-            </card>
-          </div>
+      <div class="container total-container">
+        <div class="col-12 balance-card">
+          <financial-card title="Saldo Total" value="1500" />
         </div>
-      </card>
+        <div class="col-12 transactions-card">
+          <card>
+            <div class="transaction-container container">
+              <div class="row transaction-title">
+                <div class="col-12 col-md-10 title">Últimas Transações</div>
+                @if(!$isMobile()){
+                <div class="col-2">
+                  <app-button
+                    type="extended-fab"
+                    icon="add_box"
+                    label="Incluir"
+                    tooltip="Incluir nova transação"
+                  ></app-button>
+                </div>
+                }
+              </div>
+              <div class="row transaction-items">
+                <transaction-agroupment
+                  [transactions]="lastTransactions"
+                ></transaction-agroupment>
+              </div>
+            </div>
+          </card>
+        </div>
+      </div>
     </div>
   </div>
 </div>

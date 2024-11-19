@@ -1,8 +1,7 @@
 <ng-container *ngIf="buttonType === 'flat'">
   <button
-    type="{{ btnType }}"
     mat-flat-button
-    matTooltip="{{ tooltip }}"
+    [matTooltip]="tooltip"
     [ngClass]="class"
     [disabled]="disabled"
   >
@@ -11,9 +10,8 @@
 </ng-container>
 <ng-container *ngIf="buttonType === 'basic'">
   <button
-    type="{{ btnType }}"
     mat-button
-    matTooltip="{{ tooltip }}"
+    [matTooltip]="tooltip"
     [matTooltipPosition]="tooltipPosition"
     [ngClass]="class"
     [disabled]="disabled"
@@ -23,9 +21,8 @@
 </ng-container>
 <ng-container *ngIf="buttonType === 'icon'">
   <button
-    type="{{ btnType }}"
     mat-icon-button
-    matTooltip="{{ tooltip }}"
+    [matTooltip]="tooltip"
     [ngClass]="class"
     disabled="{{ disabled }}"
   >
@@ -34,12 +31,23 @@
 </ng-container>
 <ng-container *ngIf="buttonType === 'fab'">
   <button
-    type="{{ btnType }}"
     mat-fab
-    matTooltip="{{ tooltip }}"
+    [matTooltip]="tooltip"
     [ngClass]="class"
     [disabled]="disabled"
   >
     <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</ng-container>
+<ng-container *ngIf="buttonType === 'extended-fab'">
+  <button
+    mat-fab
+    extended
+    [matTooltip]="tooltip"
+    [ngClass]="class"
+    [disabled]="disabled"
+  >
+    <mat-icon>{{ icon }}</mat-icon>
+    {{ buttonLabel }}
   </button>
 </ng-container>

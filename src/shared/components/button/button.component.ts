@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-type ButtonTypeT = 'flat' | 'basic' | 'icon' | 'fab';
+type ButtonTypeT = 'flat' | 'basic' | 'icon' | 'fab' | 'extended-fab';
 type TooltipPositionT =
   | 'above'
   | 'below'
