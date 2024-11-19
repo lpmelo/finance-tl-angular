@@ -4,6 +4,7 @@ import { selectUserData } from '../../store/settings-reducer/settings.selectors'
 import { UserDataJwtPayload } from '../../store/settings-reducer/settings.reducer';
 import { selectLayoutIsMobileDevice } from '../../store/layout-reducer/layout.selectors';
 import { ButtonListT } from './components/fab-slider/fab-slider.component';
+import { Router } from '@angular/router';
 
 export type TransactionType = 'exit' | 'entrie';
 export type TransactionGender = 'payment' | 'food' | 'plot';
@@ -23,14 +24,14 @@ export interface TransactionsI {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  router = inject(Router);
   store = inject(Store);
   $userData: Signal<UserDataJwtPayload> =
     this.store.selectSignal(selectUserData);
   $isMobile = this.store.selectSignal(selectLayoutIsMobileDevice);
 
   fabButtonList: ButtonListT = [
-    { icon: 'edit', onClick: this.handleClickFabAddButton },
-    { icon: 'add', onClick: this.handleClickFabAddButton },
+    { icon: 'add', onClick: this.handleClickAddButton },
   ];
 
   lastTransactions: Array<TransactionsI> = [
@@ -94,7 +95,7 @@ export class HomeComponent {
     },
   ];
 
-  handleClickFabAddButton(e: MouseEvent) {
-    console.log(e.target);
+  handleClickAddButton(e: MouseEvent) {
+    this.router.navigateByUrl('/transaction/new');
   }
 }

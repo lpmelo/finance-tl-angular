@@ -57,4 +57,13 @@ export class SideBarComponent {
       this.$collapsedSideBar() ? 'collapsed' : ''
     } ${this.$isMobileDevice() ? 'mobile' : ''}`;
   }
+
+  handleClickNavBtn(e: MouseEvent) {
+    const element = e.target as HTMLElement;
+    const buttonElement = element.parentElement as HTMLButtonElement;
+
+    if (buttonElement?.value) {
+      this.router.navigateByUrl(buttonElement.value);
+    }
+  }
 }

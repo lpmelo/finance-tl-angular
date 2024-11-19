@@ -4,6 +4,7 @@
     [matTooltip]="tooltip"
     [ngClass]="class"
     [disabled]="disabled"
+    [value]="value"
   >
     {{ buttonLabel }}
   </button>
@@ -15,6 +16,7 @@
     [matTooltipPosition]="tooltipPosition"
     [ngClass]="class"
     [disabled]="disabled"
+    [value]="value"
   >
     {{ buttonLabel }}
   </button>
@@ -24,7 +26,8 @@
     mat-icon-button
     [matTooltip]="tooltip"
     [ngClass]="class"
-    disabled="{{ disabled }}"
+    [disabled]="disabled"
+    [value]="value"
   >
     <mat-icon>{{ icon }}</mat-icon>
   </button>
@@ -35,6 +38,7 @@
     [matTooltip]="tooltip"
     [ngClass]="class"
     [disabled]="disabled"
+    [value]="value"
   >
     <mat-icon>{{ icon }}</mat-icon>
   </button>
@@ -46,6 +50,7 @@
     [matTooltip]="tooltip"
     [ngClass]="class"
     [disabled]="disabled"
+    [value]="value"
   >
     <mat-icon>{{ icon }}</mat-icon>
     {{ buttonLabel }}

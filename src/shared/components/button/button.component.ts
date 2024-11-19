@@ -24,4 +24,5 @@ export class ButtonComponent {
   @Input({ alias: 'icon' }) icon!: string;
   @Input() disabled!: boolean;
   @Input() btnType!: string;
+  @Input() value!: any;
 }
