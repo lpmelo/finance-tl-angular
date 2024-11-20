@@ -9,10 +9,9 @@ interface AgrouppedTransactionI {
 }
 
 @Component({
-    selector: 'transaction-agroupment',
-    templateUrl: './transaction-agroupment.component.html',
-    styleUrl: './transaction-agroupment.component.scss',
-    standalone: false
+  selector: 'transaction-agroupment',
+  templateUrl: './transaction-agroupment.component.html',
+  styleUrl: './transaction-agroupment.component.scss',
 })
 export class TransactionAgroupmentComponent implements OnChanges {
   @Input({ alias: 'transactions' }) transactions: Array<TransactionsI> = [];

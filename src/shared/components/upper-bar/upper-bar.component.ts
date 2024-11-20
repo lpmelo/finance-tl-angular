@@ -8,10 +8,9 @@ import { collapseSideBar } from '../../../store/layout-reducer/layout.actions';
 import { clearUserSettings } from '../../../store/settings-reducer/settings.actions';
 
 @Component({
-    selector: 'upper-bar',
-    templateUrl: './upper-bar.component.html',
-    styleUrl: './upper-bar.component.scss',
-    standalone: false
+  selector: 'upper-bar',
+  templateUrl: './upper-bar.component.html',
+  styleUrl: './upper-bar.component.scss',
 })
 export class UpperBarComponent {
   private store = inject(Store);

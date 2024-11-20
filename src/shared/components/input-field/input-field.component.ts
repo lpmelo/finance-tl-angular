@@ -2,10 +2,9 @@ import { Component, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
-    selector: 'input-field',
-    templateUrl: './input-field.component.html',
-    styleUrls: ['./input-field.component.scss'],
-    standalone: false
+  selector: 'input-field',
+  templateUrl: './input-field.component.html',
+  styleUrls: ['./input-field.component.scss'],
 })
 export class InputFieldComponent {
   @Input() label: string | undefined;

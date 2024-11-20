@@ -9,10 +9,9 @@ type IconsType = {
 };
 
 @Component({
-    selector: 'toast',
-    templateUrl: './toast.component.html',
-    styleUrls: ['./toast.component.scss'],
-    standalone: false
+  selector: 'toast',
+  templateUrl: './toast.component.html',
+  styleUrls: ['./toast.component.scss'],
 })
 export class ToastComponent {
   snackBarRef = inject(MatSnackBarRef);

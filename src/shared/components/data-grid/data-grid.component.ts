@@ -7,10 +7,9 @@ type ColumnDefT = {
 };
 
 @Component({
-    selector: 'data-grid',
-    templateUrl: './data-grid.component.html',
-    styleUrl: './data-grid.component.scss',
-    standalone: false
+  selector: 'data-grid',
+  templateUrl: './data-grid.component.html',
+  styleUrl: './data-grid.component.scss',
 })
 export class DataGridComponent implements OnInit {
   @Input() data: Array<any> = [];

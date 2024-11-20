@@ -4,10 +4,9 @@ import { selectLayoutIsMobileDevice } from '../../../store/layout-reducer/layout
 import { Location } from '@angular/common';
 
 @Component({
-    selector: 'transaction-footer',
-    templateUrl: './footer.component.html',
-    styleUrl: './footer.component.scss',
-    standalone: false
+  selector: 'transaction-footer',
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
   store = inject(Store);

@@ -10,10 +10,9 @@ type TooltipPositionT =
   | 'after';
 
 @Component({
-    selector: 'app-button',
-    templateUrl: './button.component.html',
-    styleUrl: './button.component.scss',
-    standalone: false
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
   @Input({ alias: 'label' }) buttonLabel: string | undefined;

@@ -13,10 +13,9 @@ const loginFormInitialState = new FormGroup({
 });
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.scss',
-    standalone: false
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   loginForm: FormGroup = loginFormInitialState;

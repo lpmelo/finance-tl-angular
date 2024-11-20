@@ -11,10 +11,9 @@ interface VerifyMobileDeviceParams {
   window?: Window | undefined;
 }
 @Component({
-    selector: 'layout-handler',
-    templateUrl: './layout-handler.component.html',
-    styleUrl: './layout-handler.component.scss',
-    standalone: false
+  selector: 'layout-handler',
+  templateUrl: './layout-handler.component.html',
+  styleUrl: './layout-handler.component.scss',
 })
 export class LayoutHandlerComponent {
   store = inject(Store);

@@ -1,10 +1,9 @@
 import { booleanAttribute, Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'radio-button',
-    templateUrl: './radio-button.component.html',
-    styleUrl: './radio-button.component.scss',
-    standalone: false
+  selector: 'radio-button',
+  templateUrl: './radio-button.component.html',
+  styleUrl: './radio-button.component.scss',
 })
 export class RadioButtonComponent {
   @Input({ alias: 'checked', transform: booleanAttribute }) checked!: boolean;

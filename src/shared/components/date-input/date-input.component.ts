@@ -2,10 +2,9 @@ import { Component, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
-    selector: 'app-date-input',
-    templateUrl: './date-input.component.html',
-    styleUrl: './date-input.component.scss',
-    standalone: false
+  selector: 'app-date-input',
+  templateUrl: './date-input.component.html',
+  styleUrl: './date-input.component.scss',
 })
 export class DateInputComponent {
   @Input() label: string = '';
