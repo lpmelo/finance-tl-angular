@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TOptions } from '../../shared/components/select-field/select-field.component';
@@ -17,7 +17,7 @@ const transactionFormInitialState = new FormGroup({
   templateUrl: './transaction.component.html',
   styleUrl: './transaction.component.scss',
 })
-export class TransactionComponent implements OnInit {
+export class TransactionComponent implements OnInit, OnDestroy {
   router = inject(Router);
   editMode = false;
   transactionForm: FormGroup = transactionFormInitialState;
@@ -27,6 +27,10 @@ export class TransactionComponent implements OnInit {
 
   ngOnInit(): void {
     this.editMode = this.router.url.includes('/edit');
+  }
+
+  ngOnDestroy(): void {
+    this.transactionForm.reset();
   }
 
   returnTitle() {
