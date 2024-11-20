@@ -16,9 +16,10 @@ interface ButtonObjI {
 interface ButtonListI extends Array<ButtonObjI> {}
 
 @Component({
-  selector: 'side-bar',
-  templateUrl: './side-bar.component.html',
-  styleUrl: './side-bar.component.scss',
+    selector: 'side-bar',
+    templateUrl: './side-bar.component.html',
+    styleUrl: './side-bar.component.scss',
+    standalone: false
 })
 export class SideBarComponent {
   private store = inject(Store);

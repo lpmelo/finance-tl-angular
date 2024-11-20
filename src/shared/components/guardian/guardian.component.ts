@@ -10,9 +10,10 @@ import {
 } from '../../../store/settings-reducer/settings.actions';
 
 @Component({
-  selector: 'guardian',
-  templateUrl: './guardian.component.html',
-  styleUrl: './guardian.component.scss',
+    selector: 'guardian',
+    templateUrl: './guardian.component.html',
+    styleUrl: './guardian.component.scss',
+    standalone: false
 })
 export class GuardianComponent implements OnInit {
   waitingCheck = false;

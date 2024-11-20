@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'icon',
-  templateUrl: './icon.component.html',
-  styleUrl: './icon.component.scss',
+    selector: 'icon',
+    templateUrl: './icon.component.html',
+    styleUrl: './icon.component.scss',
+    standalone: false
 })
 export class IconComponent {
   @Input({ alias: 'font-icon', required: true }) fontIcon!: string;

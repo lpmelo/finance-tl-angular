@@ -10,9 +10,10 @@ interface ButtonI {
 }
 
 @Component({
-  selector: 'fab-slider',
-  templateUrl: './fab-slider.component.html',
-  styleUrl: './fab-slider.component.scss',
+    selector: 'fab-slider',
+    templateUrl: './fab-slider.component.html',
+    styleUrl: './fab-slider.component.scss',
+    standalone: false
 })
 export class FabSliderComponent {
   @Input({ alias: 'buttonList' }) buttonList!: ButtonListT;

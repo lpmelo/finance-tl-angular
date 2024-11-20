@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'select-field',
-  templateUrl: './select-field.component.html',
-  styleUrl: './select-field.component.scss',
+    selector: 'select-field',
+    templateUrl: './select-field.component.html',
+    styleUrl: './select-field.component.scss',
+    standalone: false
 })
 export class SelectFieldComponent {
   @Input() label: string = '';

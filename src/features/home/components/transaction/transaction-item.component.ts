@@ -5,9 +5,10 @@ type TransactionGendersT = {
 };
 
 @Component({
-  selector: 'transaction',
-  templateUrl: './transaction-item.component.html',
-  styleUrl: './transaction-item.component.scss',
+    selector: 'transaction',
+    templateUrl: './transaction-item.component.html',
+    styleUrl: './transaction-item.component.scss',
+    standalone: false
 })
 export class TransactionItemComponent {
   @Input({ alias: 'value', transform: numberAttribute }) value: number = 0;
