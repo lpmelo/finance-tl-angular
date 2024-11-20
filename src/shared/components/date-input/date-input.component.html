@@ -1,18 +1,14 @@
-<mat-form-field>
-  <mat-label>Meeting date</mat-label>
-  <input matInput [matDatepicker]="datepicker" [(ngModel)]="value" />
-  <mat-datepicker #datepicker />
-  <mat-datepicker-toggle [for]="datepicker" matSuffix />
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Meeting time</mat-label>
+<mat-form-field [ngClass]="class">
+  <mat-label>{{ label }}</mat-label>
   <input
     matInput
-    [matTimepicker]="timepicker"
-    [(ngModel)]="value"
-    [ngModelOptions]="{ updateOn: 'blur' }"
+    [matDatepicker]="picker"
+    [placeholder]="placeholder"
+    [formControl]="convertToFormControl(formControl)"
   />
-  <mat-timepicker #timepicker />
-  <mat-timepicker-toggle [for]="timepicker" matSuffix />
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="convertToFormControl(formControl).errors">
+    Campo obrigatório
+  </mat-error>
 </mat-form-field>

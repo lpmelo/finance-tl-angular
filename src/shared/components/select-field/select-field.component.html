@@ -4,8 +4,9 @@
     [placeholder]="placeholder"
     [formControl]="convertToFormControl(formControl)"
   >
-    <mat-option value="one">First option</mat-option>
-    <mat-option value="two">Second option</mat-option>
+    @for (option of options; track option.value) {
+    <mat-option [value]="option.value">{{ option.content }}</mat-option>
+    }
   </mat-select>
   <mat-error *ngIf="convertToFormControl(formControl).errors">
     Campo obrigatório

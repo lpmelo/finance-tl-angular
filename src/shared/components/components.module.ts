@@ -26,8 +26,6 @@ import {
   MatSnackBarLabel,
 } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
-import { provideNativeDateAdapter } from '@angular/material/core';
-import { MatTimepickerModule } from '@angular/material/timepicker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { GuardianComponent } from './guardian/guardian.component';
 import { SelectFieldComponent } from './select-field/select-field.component';
@@ -66,8 +64,7 @@ import { DateInputComponent } from './date-input/date-input.component';
     MatSnackBarLabel,
     MatSnackBarActions,
     MatSnackBarAction,
-    MatTimepickerModule,
-    MatDatepickerModule,
+    MatDatepickerModule
   ],
   exports: [
     InputFieldComponent,
@@ -83,6 +80,7 @@ import { DateInputComponent } from './date-input/date-input.component';
     ToastComponent,
     GuardianComponent,
     SelectFieldComponent,
+    DateInputComponent,
   ],
 })
 export class ComponentsModule {}

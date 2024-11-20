@@ -5,22 +5,25 @@
   <div class="content form-container container">
     <form [formGroup]="transactionForm" class="form col-12 container">
       <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <select-field
             label="Tipo de transação"
             placeholder="Selecione o tipo"
+            [options]="typeOptions"
             [control]="transactionForm.controls['type']"
           ></select-field>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <select-field
             label="Gênero da transação"
             placeholder="Selecione o gênero"
+            [options]="genderOptions"
             [control]="transactionForm.controls['gender']"
           ></select-field>
         </div>
-        @if(transactionForm.controls['gender']){
-        <div class="col-12 col-md-4">
+
+        @if(transactionForm.get('gender')?.value === 'plot'){
+        <div class="col-12 col-md-12">
           <input-field
             label="Número de parcelas"
             type="number"
@@ -30,7 +33,7 @@
         </div>
         }
 
-        <div class="col-12">
+        <div class="col-12 col-md-6">
           <input-field
             label="Valor da transação"
             type="number"
@@ -38,20 +41,21 @@
             [control]="transactionForm.controls['value']"
           ></input-field>
         </div>
+
+        <div class="col-12 col-md-6">
+          <date-input
+            label="Data da transação"
+            placeholder="Escolha a data da transação"
+            [control]="transactionForm.controls['date']"
+          ></date-input>
+        </div>
+
         <div class="col-12">
           <input-field
             type="text"
             label="Descrição da transação"
             placeholder="Digite a descrição da transação"
             [control]="transactionForm.controls['description']"
-          ></input-field>
-        </div>
-        <div class="col-12">
-          <input-field
-            type="datetime-local"
-            label="Data da transação"
-            placeholder="Escolha a data da transação"
-            [control]="transactionForm.controls['date']"
           ></input-field>
         </div>
       </div>

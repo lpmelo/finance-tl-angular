@@ -14,6 +14,7 @@ import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { GuardianComponent } from './components/guardian/guardian.component';
 import { SelectFieldComponent } from './components/select-field/select-field.component';
+import { DateInputComponent } from './components/date-input/date-input.component';
 
 @NgModule({
   declarations: [],
@@ -32,6 +33,7 @@ import { SelectFieldComponent } from './components/select-field/select-field.com
     ToastComponent,
     GuardianComponent,
     SelectFieldComponent,
+    DateInputComponent,
   ],
 })
 export class SharedModule {}
