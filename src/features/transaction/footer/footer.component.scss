@@ -6,13 +6,12 @@
 
 .footer-container {
   display: flex;
+  height: 100%;
   gap: 15px;
-  position: sticky;
   padding: 2rem;
   border-top: 1px solid;
   border-color: $border-color-dark;
   max-width: unset !important;
-  top: 100%;
   
   @media (max-width: 1150px) {
     justify-content: center;

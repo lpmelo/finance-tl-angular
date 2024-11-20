@@ -1,2 +1,59 @@
-<p>{{ editMode }}</p>
-<transaction-footer></transaction-footer>
+<div class="screen-container">
+  <div class="title form-container container">
+    <p>{{ returnTitle() }}</p>
+  </div>
+  <div class="content form-container container">
+    <form [formGroup]="transactionForm" class="form col-12 container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <input-field
+            label="Tipo de transação (select)"
+            placeholder="Digite o seu usuário"
+            [control]="transactionForm.controls['type']"
+          ></input-field>
+        </div>
+        <div class="col-12 col-md-4">
+          <input-field
+            label="Gênero da transação (select)"
+            placeholder="Digite o seu usuário"
+            [control]="transactionForm.controls['gender']"
+          ></input-field>
+        </div>
+        @if(transactionForm.controls['gender']){
+        <div class="col-12 col-md-4">
+          <input-field
+            label="Número de parcelas"
+            placeholder="Digite o seu usuário"
+            [control]="transactionForm.controls['plotNumber']"
+          ></input-field>
+        </div>
+        }
+
+        <div class="col-12">
+          <input-field
+            label="Valor da transação"
+            placeholder="Digite o valor da transação"
+            [control]="transactionForm.controls['value']"
+          ></input-field>
+        </div>
+        <div class="col-12">
+          <input-field
+            label="Descrição da transação"
+            placeholder="Digite a descrição da transação"
+            [control]="transactionForm.controls['description']"
+          ></input-field>
+        </div>
+        <div class="col-12">
+          <input-field
+            label="Data da transação"
+            placeholder="Escolha a data da transação"
+            [control]="transactionForm.controls['date']"
+          ></input-field>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <transaction-footer></transaction-footer>
+  </div>
+</div>
