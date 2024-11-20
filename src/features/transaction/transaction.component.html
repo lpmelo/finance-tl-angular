@@ -6,24 +6,25 @@
     <form [formGroup]="transactionForm" class="form col-12 container">
       <div class="row">
         <div class="col-12 col-md-4">
-          <input-field
-            label="Tipo de transação (select)"
-            placeholder="Digite o seu usuário"
+          <select-field
+            label="Tipo de transação"
+            placeholder="Selecione o tipo"
             [control]="transactionForm.controls['type']"
-          ></input-field>
+          ></select-field>
         </div>
         <div class="col-12 col-md-4">
-          <input-field
-            label="Gênero da transação (select)"
-            placeholder="Digite o seu usuário"
+          <select-field
+            label="Gênero da transação"
+            placeholder="Selecione o gênero"
             [control]="transactionForm.controls['gender']"
-          ></input-field>
+          ></select-field>
         </div>
         @if(transactionForm.controls['gender']){
         <div class="col-12 col-md-4">
           <input-field
             label="Número de parcelas"
-            placeholder="Digite o seu usuário"
+            type="number"
+            placeholder="Digite o número de parcelas"
             [control]="transactionForm.controls['plotNumber']"
           ></input-field>
         </div>
@@ -32,12 +33,14 @@
         <div class="col-12">
           <input-field
             label="Valor da transação"
+            type="number"
             placeholder="Digite o valor da transação"
             [control]="transactionForm.controls['value']"
           ></input-field>
         </div>
         <div class="col-12">
           <input-field
+            type="text"
             label="Descrição da transação"
             placeholder="Digite a descrição da transação"
             [control]="transactionForm.controls['description']"
@@ -45,6 +48,7 @@
         </div>
         <div class="col-12">
           <input-field
+            type="datetime-local"
             label="Data da transação"
             placeholder="Escolha a data da transação"
             [control]="transactionForm.controls['date']"
