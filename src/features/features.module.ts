@@ -10,6 +10,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 import { TransactionAgroupmentComponent } from './home/components/transaction-agroupment/transaction-agroupment.component';
 import { FabSliderComponent } from './home/components/fab-slider/fab-slider.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { FooterComponent } from './transaction/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TransactionComponent } from './transaction/transaction.component';
     TransactionAgroupmentComponent,
     FabSliderComponent,
     TransactionComponent,
+    FooterComponent,
   ],
   imports: [CommonModule, SharedModule, MatTooltip, ReactiveFormsModule],
   exports: [LoginComponent],

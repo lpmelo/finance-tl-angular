@@ -1,0 +1,23 @@
+@import "../../../styles/variables";
+
+::ng-deep .content-container {
+  padding: 0px !important;
+}
+
+.footer-container {
+  display: flex;
+  gap: 15px;
+  position: sticky;
+  padding: 2rem;
+  border-top: 1px solid;
+  border-color: $border-color-dark;
+  max-width: unset !important;
+  top: 100%;
+  
+  @media (max-width: 1150px) {
+    justify-content: center;
+  }
+  @media (min-width: 1151px) {
+    justify-content: flex-end;
+  }
+}

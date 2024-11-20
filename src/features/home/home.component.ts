@@ -31,7 +31,7 @@ export class HomeComponent {
   $isMobile = this.store.selectSignal(selectLayoutIsMobileDevice);
 
   fabButtonList: ButtonListT = [
-    { icon: 'add', onClick: this.handleClickAddButton },
+    { icon: 'add', onClick: (e: MouseEvent) => this.handleClickAddButton(e) },
   ];
 
   lastTransactions: Array<TransactionsI> = [
