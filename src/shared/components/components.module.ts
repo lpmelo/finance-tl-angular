@@ -26,6 +26,8 @@ import {
   MatSnackBarLabel,
 } from '@angular/material/snack-bar';
 import { GuardianComponent } from './guardian/guardian.component';
+import { SelectFieldComponent } from './select-field/select-field.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -41,12 +43,14 @@ import { GuardianComponent } from './guardian/guardian.component';
     BackdropComponent,
     ToastComponent,
     GuardianComponent,
+    SelectFieldComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
@@ -70,7 +74,8 @@ import { GuardianComponent } from './guardian/guardian.component';
     DataGridComponent,
     BackdropComponent,
     ToastComponent,
-    GuardianComponent
+    GuardianComponent,
+    SelectFieldComponent,
   ],
 })
 export class ComponentsModule {}

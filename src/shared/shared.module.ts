@@ -13,6 +13,7 @@ import { UpperBarComponent } from './components/upper-bar/upper-bar.component';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { GuardianComponent } from './components/guardian/guardian.component';
+import { SelectFieldComponent } from './components/select-field/select-field.component';
 
 @NgModule({
   declarations: [],
@@ -29,7 +30,8 @@ import { GuardianComponent } from './components/guardian/guardian.component';
     DataGridComponent,
     BackdropComponent,
     ToastComponent,
-    GuardianComponent
+    GuardianComponent,
+    SelectFieldComponent,
   ],
 })
 export class SharedModule {}
