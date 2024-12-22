@@ -1,22 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
-export type TOptions = {
-  content: string;
-  value: any;
-};
 @Component({
-  selector: 'select-field',
-  templateUrl: './select-field.component.html',
-  styleUrl: './select-field.component.scss',
+  selector: 'checkbox-field',
+  templateUrl: './checkbox.component.html',
+  styleUrl: './checkbox.component.scss',
 })
-export class SelectFieldComponent {
-  @Input() label: string = '';
-  @Input() placeholder: string = '';
+export class CheckboxComponent {
+  @Input() label: string | undefined;
+  @Input() type: string | undefined;
   @Input() class: string = 'full-width';
-  @Input() options?: Array<TOptions>;
-  @Input() disabled?: boolean;
   @Input('control') formControl!: AbstractControl;
+  @Input() disabled: boolean | undefined;
 
   convertToFormControl(abstractControl: AbstractControl) {
     const control = abstractControl as FormControl;

@@ -1,0 +1,55 @@
+@import "../../../styles/variables";
+
+:host::ng-deep.mat-mdc-checkbox .mat-internal-form-field {
+  color: $white !important;
+}
+
+:host ::ng-deep.mat-mdc-checkbox.mat-mdc-checkbox-disabled label{
+  color: #ffffff25
+}
+
+:host::ng-deep .mat-accent.mat-mdc-checkbox {
+  --mdc-checkbox-selected-pressed-icon-color: white;
+  --mdc-checkbox-selected-checkmark-color: #212529;
+  --mdc-checkbox-selected-focus-icon-color: white;
+  --mdc-checkbox-selected-hover-icon-color: white;
+  --mdc-checkbox-selected-icon-color: white;
+  --mdc-checkbox-selected-focus-state-layer-color: white;
+  --mdc-checkbox-selected-hover-state-layer-color: white;
+  --mdc-checkbox-unselected-pressed-state-layer-color: white;
+  --mat-checkbox-disabled-label-color: rgba(26, 27, 31, 0.38);
+  --mat-checkbox-label-text-color: red;
+}
+
+:host ::ng-deep .mdc-checkbox__background {
+  border-color: $white;
+}
+
+:host
+  ::ng-deep
+  .mdc-checkbox__native-control:focus:focus:not(:checked)
+  ~ .mdc-checkbox__background,
+.mdc-checkbox__native-control:focus:focus:not(:indeterminate)
+  ~ .mdc-checkbox__background {
+  border-color: $white;
+}
+
+:host
+  ::ng-deep
+  .mdc-checkbox:hover
+  .mdc-checkbox__native-control:not(:checked)
+  ~ .mdc-checkbox__background,
+.mdc-checkbox:hover
+  .mdc-checkbox__native-control:not(:indeterminate)
+  ~ .mdc-checkbox__background {
+  border-color: $white;
+}
+
+:host
+  ::ng-deep
+  .mdc-checkbox__native-control:disabled:checked
+  ~ .mdc-checkbox__background,
+.mdc-checkbox__native-control:disabled:indeterminate
+  ~ .mdc-checkbox__background {
+    background-color: #ffffff25;
+}

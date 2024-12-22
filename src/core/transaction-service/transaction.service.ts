@@ -14,6 +14,17 @@ export interface TransactionParamsResponseI {
   data?: Array<TransactionParamT> | [];
 }
 
+export interface PostTransactionPayloadI{
+  description: string,
+  value: number,
+  date: string,
+  id_user_fk: number | null,
+  id_gender_fk: number,
+  id_type_fk: number,
+  recurrence: boolean,
+  plot_total?: number | null
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -47,6 +58,14 @@ export class TransactionService {
         id_user_fk: this.$userData().id_user_pk,
         date_ref: dateRef,
       })
+      .pipe(take(1));
+
+    return await lastValueFrom(request);
+  }
+
+  async postTransacton(payload: PostTransactionPayloadI) {
+    const request = this.http
+      .post(`${this.apiTransactionsUrl}/create`, payload)
       .pipe(take(1));
 
     return await lastValueFrom(request);

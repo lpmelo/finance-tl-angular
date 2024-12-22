@@ -26,10 +26,12 @@ import {
   MatSnackBarLabel,
 } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { GuardianComponent } from './guardian/guardian.component';
 import { SelectFieldComponent } from './select-field/select-field.component';
 import { DateInputComponent } from './date-input/date-input.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { DateInputComponent } from './date-input/date-input.component';
     GuardianComponent,
     SelectFieldComponent,
     DateInputComponent,
+    CheckboxComponent,
   ],
   imports: [
     CommonModule,
@@ -64,7 +67,8 @@ import { DateInputComponent } from './date-input/date-input.component';
     MatSnackBarLabel,
     MatSnackBarActions,
     MatSnackBarAction,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatCheckboxModule,
   ],
   exports: [
     InputFieldComponent,
@@ -81,6 +85,7 @@ import { DateInputComponent } from './date-input/date-input.component';
     GuardianComponent,
     SelectFieldComponent,
     DateInputComponent,
+    CheckboxComponent
   ],
 })
 export class ComponentsModule {}

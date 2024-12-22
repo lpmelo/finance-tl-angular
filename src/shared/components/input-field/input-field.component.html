@@ -8,6 +8,6 @@
     [formControl]="convertToFormControl(formControl)"
   />
   <mat-error *ngIf="convertToFormControl(formControl).errors">
-    Campo obrigatório
+    {{errorMessage ? errorMessage : "Campo obrigatório"}}
   </mat-error>
 </mat-form-field>

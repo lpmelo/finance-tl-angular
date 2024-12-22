@@ -11,6 +11,7 @@ export class InputFieldComponent {
   @Input() placeholder: string | undefined;
   @Input() type: string | undefined;
   @Input() class: string = 'full-width';
+  @Input() errorMessage?: string;
   @Input('control') formControl!: AbstractControl;
 
   convertToFormControl(abstractControl: AbstractControl) {

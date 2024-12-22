@@ -15,6 +15,7 @@ import { ToastComponent } from './components/toast/toast.component';
 import { GuardianComponent } from './components/guardian/guardian.component';
 import { SelectFieldComponent } from './components/select-field/select-field.component';
 import { DateInputComponent } from './components/date-input/date-input.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [],
@@ -34,6 +35,7 @@ import { DateInputComponent } from './components/date-input/date-input.component
     GuardianComponent,
     SelectFieldComponent,
     DateInputComponent,
+    CheckboxComponent
   ],
 })
 export class SharedModule {}
