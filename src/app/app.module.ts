@@ -12,7 +12,13 @@ import { FeaturesModule } from '../features/features.module';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 import { LayoutHandlerComponent } from './components/layout-handler/layout-handler.component';
-import { provideHttpClient } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptors,
+} from '@angular/common/http';
+import {
+  headersInterceptor,
+} from '../core/headers-interceptor/headers.interceptor';
 
 @NgModule({
   declarations: [AppComponent, LayoutHandlerComponent],
@@ -28,7 +34,10 @@ import { provideHttpClient } from '@angular/common/http';
       logOnly: !isDevMode(),
     }),
   ],
-  providers: [provideAnimationsAsync(), provideHttpClient()],
+  providers: [
+    provideAnimationsAsync(),
+    provideHttpClient(withInterceptors([headersInterceptor])),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,54 @@
+import { inject, Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { lastValueFrom, take } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectUserData } from '../../store/settings-reducer/settings.selectors';
+
+type TransactionParamT = {
+  category: string;
+  description: string;
+  id_transaction_param_pk: number;
+};
+export interface TransactionParamsResponseI {
+  data?: Array<TransactionParamT> | [];
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class TransactionService {
+  store = inject(Store);
+  $userData = this.store.selectSignal(selectUserData);
+  apiTransactionParamsUrl = `${environment.apiBaseUrl}/transaction-params`;
+  apiTransactionsUrl = `${environment.apiBaseUrl}/transactions`;
+
+  constructor(private http: HttpClient) {}
+
+  async getAllTransactionGenders() {
+    const request = this.http
+      .get(`${this.apiTransactionParamsUrl}/genders`)
+      .pipe(take(1));
+
+    return await lastValueFrom(request);
+  }
+
+  async getAllTransactionTypes() {
+    const request = this.http
+      .get(`${this.apiTransactionParamsUrl}/types`)
+      .pipe(take(1));
+
+    return await lastValueFrom(request);
+  }
+
+  async retrieveMonthTransaction(dateRef: string) {
+    const request = this.http
+      .post(`${this.apiTransactionsUrl}/month/user`, {
+        id_user_fk: this.$userData().id_user_pk,
+        date_ref: dateRef,
+      })
+      .pipe(take(1));
+
+    return await lastValueFrom(request);
+  }
+}
