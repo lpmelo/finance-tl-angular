@@ -1,0 +1,7 @@
+.full-width {
+  width: 100%;
+}
+
+:host ::ng-deep .mdc-text-field--filled.mdc-text-field--disabled{
+  background-color: #ffffff90;
+}

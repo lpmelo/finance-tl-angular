@@ -25,7 +25,13 @@ import {
   MatSnackBarActions,
   MatSnackBarLabel,
 } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { GuardianComponent } from './guardian/guardian.component';
+import { SelectFieldComponent } from './select-field/select-field.component';
+import { DateInputComponent } from './date-input/date-input.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +47,16 @@ import { GuardianComponent } from './guardian/guardian.component';
     BackdropComponent,
     ToastComponent,
     GuardianComponent,
+    SelectFieldComponent,
+    DateInputComponent,
+    CheckboxComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
@@ -57,6 +67,8 @@ import { GuardianComponent } from './guardian/guardian.component';
     MatSnackBarLabel,
     MatSnackBarActions,
     MatSnackBarAction,
+    MatDatepickerModule,
+    MatCheckboxModule,
   ],
   exports: [
     InputFieldComponent,
@@ -70,7 +82,10 @@ import { GuardianComponent } from './guardian/guardian.component';
     DataGridComponent,
     BackdropComponent,
     ToastComponent,
-    GuardianComponent
+    GuardianComponent,
+    SelectFieldComponent,
+    DateInputComponent,
+    CheckboxComponent
   ],
 })
 export class ComponentsModule {}

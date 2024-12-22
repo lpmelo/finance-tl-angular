@@ -1,0 +1,123 @@
+@import "../../../../styles/variables";
+
+.transaction-container {
+  display: flex;
+  color: $font-color;
+  font-family: $font-family;
+}
+.t-row {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  @media (min-width: 1500px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 1499px) {
+    margin-bottom: 5px;
+  }
+}
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px !important;
+  & > p {
+    cursor: default;
+    margin: 0px !important;
+    width: 100%;
+  }
+
+  @media (min-width: 1051px) {
+    width: 5%;
+  }
+  
+  @media (max-width: 1050px) {
+    width: 15%;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50%;
+  @media (max-width: 768px) {
+    transform: scale(1);
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    transform: scale(1.3);
+  }
+
+  @media (min-width: 1900px) {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    transform: scale(1.3);
+  }
+}
+
+.transaction-hour {
+  font-size: 10px;
+  height: 50%;
+  @media (max-width: 768px) {
+    font-size: 8px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  padding-left: 15px;
+  padding-right: 20px;
+
+  & > p {
+    cursor: default;
+    margin: 0px !important;
+  }
+
+  @media (min-width: 1051px) {
+    width: 65%;
+  }
+
+  @media (max-width: 1050px) {
+    width: 55%;
+  }
+}
+
+.description-text {
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+}
+
+.value {
+  width: 30%;
+  & > p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+}
+
+.neutral {
+  color: $font-color;
+}
+
+.positive {
+  color: $green;
+}
+
+.negative {
+  color: $red;
+}

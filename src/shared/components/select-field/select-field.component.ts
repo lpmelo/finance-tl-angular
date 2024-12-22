@@ -1,17 +1,21 @@
 import { Component, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
+export type TOptions = {
+  content: string;
+  value: any;
+};
 @Component({
-  selector: 'input-field',
-  templateUrl: './input-field.component.html',
-  styleUrls: ['./input-field.component.scss'],
+  selector: 'select-field',
+  templateUrl: './select-field.component.html',
+  styleUrl: './select-field.component.scss',
 })
-export class InputFieldComponent {
-  @Input() label: string | undefined;
-  @Input() placeholder: string | undefined;
-  @Input() type: string | undefined;
+export class SelectFieldComponent {
+  @Input() label: string = '';
+  @Input() placeholder: string = '';
   @Input() class: string = 'full-width';
-  @Input() errorMessage?: string;
+  @Input() options?: Array<TOptions>;
+  @Input() disabled?: boolean;
   @Input('control') formControl!: AbstractControl;
 
   convertToFormControl(abstractControl: AbstractControl) {

@@ -34,7 +34,7 @@ export class LayoutHandlerComponent {
         : false;
 
       if (windowElement) {
-        const mobileSize = windowElement.innerWidth < 768;
+        const mobileSize = windowElement.innerWidth < 1151;
 
         if (mobileSize != this.$isMobileDevice()) {
           this.store.dispatch(mobileDevice({ isMobileScreen: mobileSize }));

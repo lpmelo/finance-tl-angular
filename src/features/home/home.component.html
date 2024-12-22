@@ -1,12 +1,19 @@
 <div class="content-container container">
+  @if($isMobile()){
+  <fab-slider [buttonList]="fabButtonList"></fab-slider>
+  }
+  <div class="row w-100">
+    <div class="row pt-5 pb-5">
+      <div class="title col-12 col-xl-10">
+        Bem vindo(a) {{ $userData().nickname }}
+      </div>
+      <div class="col-12 col-xl-2">
+        <app-button label="filtrar" class="dark"></app-button>
+      </div>
+    </div>
+  </div>
   <div class="row w-100 content-row">
     <div class="row col-12 p-0">
-      <div class="row pt-5 pb-5">
-        <div class="title col-12 col-xl-10">Estatísticas Gerais</div>
-        <div class="col-12 col-xl-2">
-          <app-button label="filtrar" class="dark"></app-button>
-        </div>
-      </div>
       <div class="row">
         <div class="col-12 col-xl-4 finance-card-container">
           <financial-card
@@ -27,62 +34,39 @@
           ></financial-card>
         </div>
       </div>
-      <div class="row pt-5">
-        @if(gridModel.entrie){
-        <div class="col-12">
-          <data-grid [columns]="gridEntriesColumns" [data]="data"></data-grid>
-        </div>
-        } @else {
-        <div class="col-12">
-          <data-grid [columns]="gridExitsColumns" [data]="data"></data-grid>
-        </div>
-        }
-        <div class="col-12 table-mode-container">
-          <radio-container>
-            <radio-button
-              (click)="handleClickRadio($event)"
-              tooltip="Entradas"
-              checked="{{ gridModel.entrie }}"
-              value="entrie"
-            />
-            <radio-button
-              (click)="handleClickRadio($event)"
-              tooltip="Saídas"
-              checked="{{ gridModel.exit }}"
-              value="exit"
-            />
-          </radio-container>
-        </div>
-      </div>
     </div>
 
-    <div class="row col-12 py-5">
-      <card>
-        <div class="container total-container">
-          <div class="col-12 balance-card">
-            <financial-card title="Saldo Total" value="1500" />
-          </div>
-          <div class="col-12 transactions-card">
-            <card>
-              <div class="container p-0">
-                <div class="row transaction-title">
-                  <div class="col-12 title">Últimas Transações</div>
-                </div>
-                <div class="row">
-                  <div *ngFor="let transaction of lastTransactions; index as i">
-                    <transaction
-                      value="{{ transaction?.value }}"
-                      description="{{ transaction?.description }}"
-                      type="{{ transaction?.type }}"
-                      gender="{{ transaction?.gender }}"
-                    />
-                  </div>
-                </div>
-              </div>
-            </card>
-          </div>
+    <div class="row col-12 monetary-info">
+      <div class="container total-container">
+        <div class="col-12 balance-card">
+          <financial-card title="Saldo Total" value="1500" />
         </div>
-      </card>
+        <div class="col-12 transactions-card">
+          <card>
+            <div class="transaction-container container">
+              <div class="row transaction-title">
+                <div class="col-12 col-md-10 title">Últimas Transações</div>
+                @if(!$isMobile()){
+                <div class="col-2">
+                  <app-button
+                    type="extended-fab"
+                    icon="add_box"
+                    label="Incluir"
+                    tooltip="Incluir nova transação"
+                    (click)="handleClickAddButton($event)"
+                  ></app-button>
+                </div>
+                }
+              </div>
+              <div class="row transaction-items">
+                <transaction-agroupment
+                  [transactions]="lastTransactions"
+                ></transaction-agroupment>
+              </div>
+            </div>
+          </card>
+        </div>
+      </div>
     </div>
   </div>
 </div>

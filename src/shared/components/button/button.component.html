@@ -1,33 +1,58 @@
 <ng-container *ngIf="buttonType === 'flat'">
   <button
-    type="{{ btnType }}"
     mat-flat-button
-    matTooltip="{{ tooltip }}"
-    class="{{ class }}"
+    [matTooltip]="tooltip"
+    [ngClass]="class"
     [disabled]="disabled"
+    [value]="value"
   >
     {{ buttonLabel }}
   </button>
 </ng-container>
 <ng-container *ngIf="buttonType === 'basic'">
   <button
-    type="{{ btnType }}"
     mat-button
-    matTooltip="{{ tooltip }}"
-    class="{{ class }}"
+    [matTooltip]="tooltip"
+    [matTooltipPosition]="tooltipPosition"
+    [ngClass]="class"
     [disabled]="disabled"
+    [value]="value"
   >
     {{ buttonLabel }}
   </button>
 </ng-container>
 <ng-container *ngIf="buttonType === 'icon'">
   <button
-    type="{{ btnType }}"
     mat-icon-button
-    matTooltip="{{ tooltip }}"
-    class="{{ class }}"
-    disabled="{{disabled}}"
+    [matTooltip]="tooltip"
+    [ngClass]="class"
+    [disabled]="disabled"
+    [value]="value"
   >
-    <icon [font-icon]="icon"></icon>
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</ng-container>
+<ng-container *ngIf="buttonType === 'fab'">
+  <button
+    mat-fab
+    [matTooltip]="tooltip"
+    [ngClass]="class"
+    [disabled]="disabled"
+    [value]="value"
+  >
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</ng-container>
+<ng-container *ngIf="buttonType === 'extended-fab'">
+  <button
+    mat-fab
+    extended
+    [matTooltip]="tooltip"
+    [ngClass]="class"
+    [disabled]="disabled"
+    [value]="value"
+  >
+    <mat-icon>{{ icon }}</mat-icon>
+    {{ buttonLabel }}
   </button>
 </ng-container>

@@ -6,12 +6,13 @@ type TransactionGendersT = {
 
 @Component({
   selector: 'transaction',
-  templateUrl: './transaction.component.html',
-  styleUrl: './transaction.component.scss',
+  templateUrl: './transaction-item.component.html',
+  styleUrl: './transaction-item.component.scss',
 })
-export class TransactionComponent {
+export class TransactionItemComponent {
   @Input({ alias: 'value', transform: numberAttribute }) value: number = 0;
   @Input({ alias: 'description' }) description!: string;
+  @Input({ alias: 'date' }) date!: string;
   @Input({ alias: 'type' }) type: string = 'entrie';
   @Input({ alias: 'gender' }) gender: string = 'payment';
 

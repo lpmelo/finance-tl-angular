@@ -2,17 +2,16 @@ import { Component, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'input-field',
-  templateUrl: './input-field.component.html',
-  styleUrls: ['./input-field.component.scss'],
+  selector: 'checkbox-field',
+  templateUrl: './checkbox.component.html',
+  styleUrl: './checkbox.component.scss',
 })
-export class InputFieldComponent {
+export class CheckboxComponent {
   @Input() label: string | undefined;
-  @Input() placeholder: string | undefined;
   @Input() type: string | undefined;
   @Input() class: string = 'full-width';
-  @Input() errorMessage?: string;
   @Input('control') formControl!: AbstractControl;
+  @Input() disabled: boolean | undefined;
 
   convertToFormControl(abstractControl: AbstractControl) {
     const control = abstractControl as FormControl;

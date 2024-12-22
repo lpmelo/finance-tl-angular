@@ -7,3 +7,8 @@ export const selectUserData = createSelector(
   selectGlobalState,
   (globalState) => globalState.settings.userSettings.userData
 );
+
+export const selectUserToken = createSelector(
+  selectGlobalState,
+  (globalState) => globalState.settings.userSettings.authToken
+);

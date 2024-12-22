@@ -1,0 +1,105 @@
+<div class="screen-container">
+  <div class="title form-container container">
+    <p>{{ returnTitle() }}</p>
+  </div>
+  <div class="content form-container container">
+    <form [formGroup]="transactionForm" class="form col-12 container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <select-field
+            label="Tipo de transação"
+            placeholder="Selecione o tipo"
+            [options]="typeOptions"
+            [control]="transactionForm.controls['type']"
+          ></select-field>
+        </div>
+        <div class="col-12 col-md-6">
+          <select-field
+            label="Gênero da transação"
+            placeholder="Selecione o gênero"
+            [options]="genderOptions"
+            [control]="transactionForm.controls['gender']"
+          ></select-field>
+        </div>
+
+        @if(transactionForm.get('gender')?.value === 1){
+        <div class="col-12 col-md-12">
+          <input-field
+            label="Número de parcelas"
+            type="number"
+            placeholder="Digite o número de parcelas"
+            [control]="transactionForm.controls['plotNumber']"
+            [errorMessage]="transactionForm.controls['plotNumber'].hasError('notPositive') ? transactionForm.controls['plotNumber'].getError('notPositive') : null"
+          ></input-field>
+        </div>
+        }
+
+        <div class="col-12 col-md-6">
+          <input-field
+            label="Valor da transação"
+            type="number"
+            placeholder="Digite o valor da transação"
+            [control]="transactionForm.controls['value']"
+          ></input-field>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <date-input
+            label="Data da transação"
+            placeholder="Escolha a data da transação"
+            [control]="transactionForm.controls['date']"
+          ></date-input>
+        </div>
+
+        <div class="col-12">
+          <input-field
+            type="text"
+            label="Descrição da transação"
+            placeholder="Digite a descrição da transação"
+            [control]="transactionForm.controls['description']"
+          ></input-field>
+        </div>
+
+        <div class="col-12">
+          <checkbox-field
+            label="Recorrente"
+            [control]="transactionForm.controls['recurrence']"
+            [disabled]="transactionForm.get('gender')?.value === 1"
+          ></checkbox-field>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <div class="footer-container col-12 container">
+      @if($isMobile()){
+      <div class="col-6">
+        <app-button
+          type="extended-fab"
+          icon="cancel"
+          label="Cancelar"
+          (click)="handleClickCancel()"
+        ></app-button>
+      </div>
+      <div class="col-6">
+        <app-button type="extended-fab" icon="save" label="Salvar"></app-button>
+      </div>
+      }@else {
+      <app-button
+        type="extended-fab"
+        icon="cancel"
+        label="Cancelar"
+        (click)="handleClickCancel()"
+        [disabled]="postLoading"
+      ></app-button>
+      <app-button
+        type="extended-fab"
+        icon="save"
+        label="Salvar"
+        (click)="handleClickSubmit()"
+        [disabled]="postLoading"
+      ></app-button>
+      }
+    </div>
+  </div>
+</div>

@@ -17,6 +17,15 @@
   }
 }
 
+.monetary-info {
+  @media (max-width: 1199px) {
+    padding-bottom: 48px;
+  }
+  @media (min-width: 1200px) {
+    padding-top: 48px;
+  }
+}
+
 .total-container {
   padding: 0px;
   width: 100%;
@@ -48,6 +57,11 @@
   height: 75%;
 }
 
+.transaction-container {
+  padding: 0px !important;
+  max-width: unset !important;
+}
+
 .transaction-title {
   @media (min-width: 1500px) {
     padding-bottom: 3rem;
@@ -57,7 +71,7 @@
   }
 }
 
-.table-mode-container {
-  display: flex;
-  justify-content: center;
+.transaction-items {
+  max-height: 375px;
+  overflow-y: scroll;
 }

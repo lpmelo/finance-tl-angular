@@ -1,13 +1,14 @@
 <mat-form-field [ngClass]="class">
   <mat-label>{{ label }}</mat-label>
   <input
-    #inputRef
     matInput
-    placeholder="{{ placeholder }}"
-    type="{{ type }}"
+    [matDatepicker]="picker"
+    [placeholder]="placeholder"
     [formControl]="convertToFormControl(formControl)"
   />
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
   <mat-error *ngIf="convertToFormControl(formControl).errors">
-    {{errorMessage ? errorMessage : "Campo obrigatório"}}
+    Campo obrigatório
   </mat-error>
 </mat-form-field>

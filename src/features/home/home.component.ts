@@ -1,4 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { selectUserData } from '../../store/settings-reducer/settings.selectors';
+import { UserDataJwtPayload } from '../../store/settings-reducer/settings.reducer';
+import { selectLayoutIsMobileDevice } from '../../store/layout-reducer/layout.selectors';
+import { ButtonListT } from './components/fab-slider/fab-slider.component';
+import { Router } from '@angular/router';
+
+export type TransactionType = 'exit' | 'entrie';
+export type TransactionGender = 'payment' | 'food' | 'plot';
+
+export interface TransactionsI {
+  type: TransactionType;
+  value: number;
+  gender: TransactionGender;
+  date: string;
+  plotDetail?: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -6,69 +24,78 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  gridModel = { entrie: true, exit: false };
+  router = inject(Router);
+  store = inject(Store);
+  $userData: Signal<UserDataJwtPayload> =
+    this.store.selectSignal(selectUserData);
+  $isMobile = this.store.selectSignal(selectLayoutIsMobileDevice);
 
-  gridEntriesColumns = [
-    { name: 'description', title: 'Descrição Entrada' },
-    { name: 'value', title: 'Valor' },
-    { name: 'actions', title: 'Ações' },
+  fabButtonList: ButtonListT = [
+    { icon: 'add', onClick: (e: MouseEvent) => this.handleClickAddButton(e) },
   ];
 
-  gridExitsColumns = [
-    { name: 'description', title: 'Descrição Saídas' },
-    { name: 'value', title: 'Valor' },
-    { name: 'actions', title: 'Ações' },
-  ];
-
-  data = [];
-
-  lastTransactions = [
+  lastTransactions: Array<TransactionsI> = [
+    {
+      type: 'entrie',
+      value: 180000,
+      description:
+        'Pagamento mensal derivado de um trabalho bem intenso e difícil',
+      date: '2024-08-14 16:35:31',
+      gender: 'payment',
+    },
     {
       type: 'entrie',
       value: 2500,
       description: 'Pagamento mensal',
-      date: '2024-08-13',
+      date: '2024-08-13 16:35:31',
+      gender: 'payment',
+    },
+    {
+      type: 'entrie',
+      value: 2500,
+      description: 'Pagamento mensal',
+      date: '2024-08-12 16:35:31',
+      gender: 'payment',
+    },
+    {
+      type: 'entrie',
+      value: 2500,
+      description: 'Pagamento mensal',
+      date: '2024-08-13 16:35:31',
       gender: 'payment',
     },
     {
       type: 'exit',
       value: -130.23,
       description: 'Pagar vidinha',
-      date: '2024-08-13',
+      date: '2024-08-11 16:35:31',
       gender: 'payment',
     },
     {
       type: 'exit',
       value: -85.42,
       description: 'Oficina da Pizza',
-      date: '2024-08-13',
+      date: '2024-08-11 16:35:31',
       gender: 'food',
     },
     {
       type: 'exit',
       value: -255.74,
       description: 'Kanzem',
-      date: '2024-08-13',
+      date: '2024-08-11 16:35:31',
       gender: 'food',
     },
     {
       type: 'exit',
       value: -80.23,
       gender: 'plot',
-      date: '2024-08-13',
+      date: '2024-08-13 16:35:31',
       plotDetail: '5/12',
       description: 'Jogos Switch 5/12',
     },
   ];
 
-  handleClickRadio(e: MouseEvent) {
-    if (e.target) {
-      const elementValue = (e.target as HTMLInputElement).value;
-      if (elementValue === 'entrie') {
-        return (this.gridModel = { entrie: true, exit: false });
-      }
-      return (this.gridModel = { entrie: false, exit: true });
-    }
-    return this.gridModel;
+  handleClickAddButton(e: MouseEvent) {
+    this.router.navigateByUrl('/transaction/new');
   }
 }
