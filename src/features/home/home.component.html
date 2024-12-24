@@ -15,31 +15,31 @@
   <div class="row w-100 content-row">
     <div class="row col-12 p-0">
       <div class="row">
-        <div class="col-12 col-xl-4 finance-card-container">
+        <div class="col-12 col-xl-6 finance-card-container">
           <financial-card
             title="Entradas Mensais"
-            value="12.39"
+            [value]="userEntriesBalance"
           ></financial-card>
         </div>
-        <div class="col-12 col-xl-4 finance-card-container">
+        <div class="col-12 col-xl-6 finance-card-container">
           <financial-card
             title="Saídas Mensais"
-            value="-12.39"
+            [value]="userExitsBalance"
           ></financial-card>
         </div>
-        <div class="col-12 col-xl-4 finance-card-container">
+        <!-- <div class="col-12 col-xl-4 finance-card-container">
           <financial-card
             title="Economias Mensais"
             value="500"
           ></financial-card>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <div class="row col-12 monetary-info">
       <div class="container total-container">
         <div class="col-12 balance-card">
-          <financial-card title="Saldo Total" value="1500" />
+          <financial-card title="Saldo Total" [value]="userBalance" />
         </div>
         <div class="col-12 transactions-card">
           <card>
@@ -59,9 +59,15 @@
                 }
               </div>
               <div class="row transaction-items">
+                @if(lastTransactions.length > 0){
                 <transaction-agroupment
                   [transactions]="lastTransactions"
                 ></transaction-agroupment>
+                }@else {
+                  <div class="empty-transaction">
+                    <p>Não há transações no período atual</p>
+                  </div>
+                }
               </div>
             </div>
           </card>
